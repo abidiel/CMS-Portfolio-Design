@@ -50,15 +50,13 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 
 /* Formulários */
 .form_f { width: 100%; margin: 0px auto; max-width: 100%; }
-.form_campo { padding: 8px 10px; font-size: 0.875rem; font-weight: 400; }
+.form_campo { padding: 16px 20px; font-size: 1rem; font-weight: 400; }
 .form_texto { min-height: 100px; }
-
-
 
 /* Helpers */
 .hdno { display: none; }
 .hfz0 { font-size: 0px; }
-.hzmp { margin: 0px; padding: 0px; }
+.hzmp { margin: 0px !important; padding: 0px !important; }
 
 /* Imagens */
 .img-fluid { max-width: 100%; height: auto; display: block; }
@@ -147,6 +145,7 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 .fa-paint-brush:before  { content: "\f1fc"; }
 .fa-pencil-ruler:before  { content: "\f5ae"; }
 .fa-quote-left:before  { content: "\f10d"; }
+.fa-paper-plane:before {content: "\f1d8"}
 
 
 
@@ -260,9 +259,8 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 .sessao_design .cards_i{color: #fff; font-size: 50px;}
 
 /* Sessão depoimentos */
-.sessao_depoimentos {background-color: red; color: #757575;}
-.cards_depoimentos_li{ display: flex; justify-content: center; padding-left: 25px !important;
-    padding-right: 25px !important;}
+.sessao_depoimentos {background: url(assets/images/pattern-depoimentos.png), linear-gradient(0deg, rgba(119,14,14,1) 0%, rgba(155,13,13,1) 100%); color: #757575;}
+.cards_depoimentos_li{ display: flex; justify-content: center; padding-left: 25px !important; padding-right: 25px !important;}
 .cards_depoimentos_content { background: #f0f0f0; width: 100%; padding: 15px; text-align: center; box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.35); }
 .cards_depoimentos_capa { width: 100px; height: 100px; margin: auto; display: flex; justify-content: center; align-items: center; }
 .cards_depoimentos_txts { padding: 15px; color: #757575;}
@@ -275,10 +273,13 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 .sessao_newsletter{ background: #fff; }
 .header_sessao_h3{color: #757575; font-size: 1.25rem; font-weight: 800; }
 .contato_ul { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
-.form_contato { width: 100%; margin: 0px auto; max-width: 442px; }
-.form_contato_li { margin-top: 15px; margin-bottom: 15px; }
-.form_campo_contato { background-color: #fff; border: solid 1px #eee; color: #666; }
-
+.form_newsletter { width: 100%; margin: 0px auto; max-width: 442px; }
+.form_newsletter_li { margin-top: 30px; margin-bottom: 15px; }
+.form_campo_jewsletter { background-color: #fff; border: solid 1px #c3c3c3; color: #666; box-shadow: 0 0 8px rgba(33,33,33,.2);}
+.form_newsletter input:focus{box-shadow:  box-shadow: 0 0 11px rgba(33,33,33,.4);}
+.form_news_button_icone:before {margin-right: 10px; font-size: 1rem;}
+.form_botao_newsletter_span{font-size: 1rem; text-transform: none;}
+.form_botao_newsletter:hover{background-color: #770e02}
 
 
 
