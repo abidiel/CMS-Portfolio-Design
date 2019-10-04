@@ -1,0 +1,375 @@
+﻿
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* RESETS */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+* { margin: 0px; padding: 0px; border: none; outline: none; letter-spacing: 0px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-size: 100%; font-family: 'Open Sans', sans-serif; }
+ul, ol { list-style: none; }
+a, a:hover { text-decoration: none; }
+img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
+
+/* Alinhamento dos textos */
+.text-center  { text-align: center; }
+.text-justify { text-align: justify; }
+.text-left	  { text-align: left; }
+.text-right   { text-align: right; }
+
+/* Border Radius */
+.br05 { border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; }
+.br10 { border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px; }
+.br25 { border-radius: 25px; -webkit-border-radius: 25px; -moz-border-radius: 25px; }
+.br50 { border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; }
+
+/* Botões */
+.btn_ { font-size: 0.75rem; font-weight: 600; text-align: center; text-transform: uppercase; display: inline-block; clear: both; cursor: pointer; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; }
+
+/* Botões ( Tamanhos ) */
+.btn_xx { padding: 10px; }
+.btn_xs { min-width: 120px; max-width: 120px; padding:  6px 15px; }
+.btn_sm { min-width: 150px; max-width: 150px; padding:  8px 15px; }
+.btn_md { min-width: 180px; max-width: 180px; padding: 10px 15px; }
+.btn_lg { min-width: 200px; max-width: 200px; padding: 12px 15px; }
+.btn_xl { min-width: 250px; max-width: 250px; padding: 14px 15px; }
+
+/* Containers */
+.container_site, .sessao_do_site { width: 100%; margin: 0px auto; max-width: 100%; }
+
+/* Font Weight */
+.fw100 { font-weight: 100; }
+.fw200 { font-weight: 200; }
+.fw300 { font-weight: 300; }
+.fw400 { font-weight: 400; }
+.fw500 { font-weight: 500; }
+.fw600 { font-weight: 600; }
+.fw700 { font-weight: 700; }
+.fw800 { font-weight: 800; }
+.fw900 { font-weight: 900; }
+
+.fwbold   { font-weight: bold; }
+.fwnormal { font-weight: normal; }
+
+/* Formulários */
+.form_f { width: 100%; margin: 0px auto; max-width: 100%; }
+.form_campo { padding: 8px 10px; font-size: 0.875rem; font-weight: 400; }
+.form_texto { min-height: 100px; }
+
+
+
+/* Helpers */
+.hdno { display: none; }
+.hfz0 { font-size: 0px; }
+.hzmp { margin: 0px; padding: 0px; }
+
+/* Imagens */
+.img-fluid { max-width: 100%; height: auto; display: block; }
+
+/* Text Transform */
+.tcap { text-transform: capitalize; }
+.tlow { text-transform: lowercase; }
+.ttup { text-transform: uppercase; }
+
+/* Transitions */
+.transitions1 { cursor: pointer; -webkit-transition: all 1s linear; -moz-transition: all 1s linear; -ms-transition: all 1s linear; -o-transition: all 1s linear; transition: all 1s linear; }
+.transitions3 { cursor: pointer; -webkit-transition: all .3s linear; -moz-transition: all .3s linear; -ms-transition: all .3s linear; -o-transition: all .3s linear; transition: all .3s linear; }
+.transitions5 { cursor: pointer; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; }
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* FONT AWESOME */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/*!
+ * Font Awesome Free 5.9.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+.fa, .fas, .far, .fal, .fab { -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; }
+.fa-lg { font-size: 1.33333em; line-height: 0.75em; vertical-align: -.0667em; }
+.fa-xs { font-size: .75em; }
+.fa-sm { font-size: .875em; }
+.fa-1x { font-size: 1em; }
+.fa-2x { font-size: 2em; }
+.fa-3x { font-size: 3em; }
+.fa-4x { font-size: 4em; }
+.fa-5x { font-size: 5em; }
+.fa-6x { font-size: 6em; }
+.fa-7x { font-size: 7em; }
+.fa-8x { font-size: 8em; }
+.fa-9x { font-size: 9em; }
+.fa-10x { font-size: 10em; }
+.fa-fw { text-align: center; width: 1.25em; }
+.fa-ul { list-style-type: none; margin-left: 2.5em; padding-left: 0; }
+.fa-ul > li { position: relative; }
+.fa-li { left: -2em; position: absolute; text-align: center; width: 2em; line-height: inherit; }
+.fa-border { border: solid 0.08em #eee; border-radius: .1em; padding: .2em .25em .15em; }
+.fa-pull-left { float: left; }
+.fa-pull-right { float: right; }
+.fa.fa-pull-left, .fas.fa-pull-left, .far.fa-pull-left, .fal.fa-pull-left, .fab.fa-pull-left { margin-right: .3em; }
+.fa.fa-pull-right, .fas.fa-pull-right, .far.fa-pull-right, .fal.fa-pull-right, .fab.fa-pull-right { margin-left: .3em; }
+.fa-spin { -webkit-animation: fa-spin 2s infinite linear; animation: fa-spin 2s infinite linear; }
+.fa-pulse { -webkit-animation: fa-spin 1s infinite steps(8); animation: fa-spin 1s infinite steps(8); }
+
+@-webkit-keyframes fa-spin {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+@keyframes fa-spin {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+.fa-rotate-90 { -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)"; -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+.fa-rotate-180 { -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)"; -webkit-transform: rotate(180deg); transform: rotate(180deg); }
+.fa-rotate-270 { -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)"; -webkit-transform: rotate(270deg); transform: rotate(270deg); }
+.fa-flip-horizontal { -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)"; -webkit-transform: scale(-1, 1); transform: scale(-1, 1); }
+.fa-flip-vertical { -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)"; -webkit-transform: scale(1, -1); transform: scale(1, -1); }
+.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical { -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)"; -webkit-transform: scale(-1, -1); transform: scale(-1, -1); }
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-flip-both { -webkit-filter: none; filter: none; }
+.fa-stack { display: inline-block; height: 2em; line-height: 2em; position: relative; vertical-align: middle; width: 2.5em; }
+.fa-stack-1x, .fa-stack-2x { left: 0; position: absolute; text-align: center; width: 100%; }
+.fa-stack-1x { line-height: inherit; }
+.fa-stack-2x { font-size: 2em; }
+.fa-inverse { color: #fff; }
+
+/* FONTE AWESOME --------------------------- */
+
+.fa-facebook-f:before   { content: "\f39e"; }
+.fa-instagram:before  	{ content: "\f16d"; }
+.fa-angle-left:before 	{ content: "\f104"; }
+.fa-angle-right:before	{ content: "\f105"; }
+.fa-css3-alt:before { content:"\f38b";}
+.fa-html5:before  { content: "\f13b"; }
+.fa-js-square:before  { content: "\f3b9"; }
+.fa-pen-fancy:before  { content: "\f5ac"; }
+.fa-paint-brush:before  { content: "\f1fc"; }
+.fa-pencil-ruler:before  { content: "\f5ae"; }
+.fa-quote-left:before  { content: "\f10d"; }
+
+
+
+/* FONTE AWESOME --------------------------- */
+
+.sr-only { border: 0; clip: rect(0, 0, 0, 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.sr-only-focusable:active, .sr-only-focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+@font-face { font-family: 'Font Awesome 5 Brands'; font-style: normal; font-weight: normal; font-display: auto;
+  src: url("assets/fonts/font_awesome/fa-brands-400.eot");
+  src: url("assets/fonts/font_awesome/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("assets/fonts/font_awesome/fa-brands-400.woff2") format("woff2"), url("assets/fonts/font_awesome/fa-brands-400.woff") format("woff"), url("assets/fonts/font_awesome/fa-brands-400.ttf") format("truetype"), url("assets/fonts/font_awesome/fa-brands-400.svg#fontawesome") format("svg"); }
+
+.fab { font-family: 'Font Awesome 5 Brands'; }
+
+@font-face { font-family: 'Font Awesome 5 Free'; font-style: normal; font-weight: 400; font-display: auto;
+  src: url("assets/fonts/font_awesome/fa-regular-400.eot");
+  src: url("assets/fonts/font_awesome/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("assets/fonts/font_awesome/fa-regular-400.woff2") format("woff2"), url("assets/fonts/font_awesome/fa-regular-400.woff") format("woff"), url("assets/fonts/font_awesome/fa-regular-400.ttf") format("truetype"), url("assets/fonts/font_awesome/fa-regular-400.svg#fontawesome") format("svg"); }
+
+.far { font-family: 'Font Awesome 5 Free'; font-weight: 400; }
+
+@font-face { font-family: 'Font Awesome 5 Free'; font-style: normal; font-weight: 900; font-display: auto;
+  src: url("assets/fonts/font_awesome/fa-solid-900.eot");
+  src: url("assets/fonts/font_awesome/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("assets/fonts/font_awesome/fa-solid-900.woff2") format("woff2"), url("assets/fonts/font_awesome/fa-solid-900.woff") format("woff"), url("assets/fonts/font_awesome/fa-solid-900.ttf") format("truetype"), url("assets/fonts/font_awesome/fa-solid-900.svg#fontawesome") format("svg"); }
+
+.fa, .fas { font-family: 'Font Awesome 5 Free'; font-weight: 900; }
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* GERAIS */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.sessao_pad { padding-top: 100px; padding-bottom: 100px; }
+.header_sessao, .footer_sessao { margin-top: 15px; margin-bottom: 15px; }
+.marginTopBottom { margin-top: 15px; margin-bottom: 15px; }
+
+.header_sessao_h2 { font-size: 2rem; font-weight: 800; line-height: 32px; }
+.header_sessao_hr { width: 70px; height: 2px; display: inline-block; background-color: #ac0000; }
+
+.btn_layout 		{ background-color: #ac0000; border: solid 1px #ac0000; color: #fff; }
+.btn_layout:hover 	{ background-color: #ac0000; border: solid 1px #ac0000; color: #fff; }
+
+.cards_i {font-size: 70px;}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* HEADER MAIN */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Cabeçalho */
+.cabecalho { width: 100%; height: 70px; padding: 15px 0px; position: fixed; top: 0px; left: 0px; z-index: 3; background-color: #000; }
+.cabecalho_ul { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+
+.logo_img { max-height: 40px; }
+
+.btn_menu_mobile { width: 30px; height: 30px; position: relative; cursor: pointer; display: block; }
+.btn_menu_mobile_span { width: 30px; height: 4px; position: absolute; top: 13px; left: 0px; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; background-color: #fff; }
+.btn_menu_mobile_span:before { content: ''; width: 30px; height: 4px; position: absolute; top: -8px; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; background-color: #fff; }
+.btn_menu_mobile_span:after { content: ''; width: 30px; height: 4px; position: absolute; bottom: -8px; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; background-color: #fff; }
+
+.btn_menu_mobile.active .btn_menu_mobile_span { background-color: transparent; }
+.btn_menu_mobile.active .btn_menu_mobile_span:before { -webkit-transform: translate(0px, 8px) rotate(45deg); -moz-transform: translate(0px, 8px) rotate(45deg); -ms-transform: translate(0px, 8px) rotate(45deg); -o-transform: translate(0px, 8px) rotate(45deg); transform: translate(0px, 8px) rotate(45deg); }
+.btn_menu_mobile.active .btn_menu_mobile_span:after { -webkit-transform: translate(0px, -8px) rotate(-45deg); -moz-transform: translate(0px, -8px) rotate(-45deg); -ms-transform: translate(0px, -8px) rotate(-45deg); -o-transform: translate(0px, -8px) rotate(-45deg); transform: translate(0px, -8px) rotate(-45deg); }
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* MAIN SITE ( Conteúdos do Site ) */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.main_site { margin-top: 70px; }
+
+/* Sessão Banner */
+.sessao_banner { position: relative; background-color: #fff; }
+.lista_banner_capa { cursor: pointer; box-shadow: 0 0 11px rgba(33,33,33,.2); }
+.sessao_banner .slick-arrow { position: absolute; top: 43%; z-index: 1; width: 36px; height: 36px; border-radius: 50%; font-size: 1.25rem; font-weight: 700; display: flex; justify-content: center; align-items: center; cursor: pointer; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; background-color: transparent; border: solid 2px #ac0000; color: #ac0000; }
+.sessao_banner .slick-arrow:hover { background-color: #ac0000; border: solid 2px #ac0000; color: #fff; }
+.sessao_banner .slick-prev-i { left: 100px; }
+.sessao_banner .slick-next-i { right: 100px; }
+.sessao_banner .slick-dots { width: 100%; position: absolute; bottom: 15px; left: 0px; z-index: 1; text-align: center; }
+.sessao_banner .slick-dots li { width: 18px; height: 18px; margin: 0px 8px; display: inline-block; border-radius: 50%; font-size: 0px; cursor: pointer; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; background-color: rgba(0,0,0,0.2); border: solid 2px #ac0000; }
+.sessao_banner .slick-dots li button { font-size: 0px; }
+.sessao_banner .slick-dots li:hover, .sessao_banner .slick-dots .slick-active { background-color: #ac0000; border: solid 2px #ac0000; }
+
+
+/* Sessão Sobre */
+.sessao_sobre { background-color: #fff; color: #757575; }
+.sobre_capa {max-width: 275px;}
+.sobre_img { width: 100%; max-width: 100%; box-shadow: 0 0 11px rgba(33,33,33,.2); }
+.sobre_txts { text-align: center; }
+.sobre_p {font-size: 1.2rem; font-weight: 400; line-height: 1.5; }
+
+/* Sessão Front-end */
+.sessao_front {background-color: #f0f0f0; color: #757575;}
+.cards_front_end_li{ display: flex; justify-content: center; padding-left: 50px !important;
+    padding-right: 50px !important;}
+.cards_front_end_content { background: rgb(119,14,14); background: linear-gradient(0deg, rgba(119,14,14,1) 0%, rgba(155,13,13,1) 100%); width: 100%; padding: 15px; text-align: center; box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.35); }
+.cards_front_end_capa { width: 100px; height: 100px; background: white; margin: auto; display: flex; justify-content: center; align-items: center; }
+.cards_front_end_txts { padding: 15px; color: #fff;}
+.cards_front_end_titulo { margin-top: 10px; margin-bottom: 10px; }
+.cards_front_end_h2 { font-size: 1.25rem; font-weight: 800; }
+.cards_front_end_h3 { font-size: 1rem; font-weight: 400; line-height: 1.5; font-family: 'Montserrat';}
+.cards_i{color: #770e0e}
+
+/* Sessão design */
+.sessao_design {background-color: #fff; color: #757575;}
+.cards_design_li{ display: flex; justify-content: center; padding-left: 50px !important;
+    padding-right: 50px !important;}
+.cards_design_content { background: #f0f0f0; width: 100%; padding: 15px; text-align: center; box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.35); }
+.cards_design_capa { width: 100px; height: 100px; background: rgb(119,14,14); background: linear-gradient(0deg, rgba(119,14,14,1) 0%, rgba(155,13,13,1) 100%); margin: auto; display: flex; justify-content: center; align-items: center; }
+.cards_design_txts { padding: 15px; color: #757575;}
+.cards_design_titulo { margin-top: 10px; margin-bottom: 10px; }
+.cards_design_h2 { font-size: 1.25rem; font-weight: 800; }
+.cards_design_h3 { font-size: 1rem; font-weight: 400; line-height: 1.5; font-family: 'Montserrat';}
+.sessao_design .cards_i{color: #fff; font-size: 50px;}
+
+/* Sessão depoimentos */
+.sessao_depoimentos {background-color: red; color: #757575;}
+.cards_depoimentos_li{ display: flex; justify-content: center; padding-left: 25px !important;
+    padding-right: 25px !important;}
+.cards_depoimentos_content { background: #f0f0f0; width: 100%; padding: 15px; text-align: center; box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.35); }
+.cards_depoimentos_capa { width: 100px; height: 100px; margin: auto; display: flex; justify-content: center; align-items: center; }
+.cards_depoimentos_txts { padding: 15px; color: #757575;}
+.cards_depoimentos_titulo { margin-top: 10px; margin-bottom: 10px; }
+.cards_depoimentos_h2 { font-size: 1.25rem; font-weight: 800; }
+.cards_depoimentos_h3 { font-size: 1rem; font-weight: 400; line-height: 1.5; font-family: 'Montserrat';}
+.sessao_depoimentos .cards_i{color: rgb(119,14,14); color: linear-gradient(0deg, rgba(119,14,14,1) 0%, rgba(155,13,13,1) 100%); font-size: 80px;}
+
+/* Sessão newsletter */
+.sessao_newsletter{ background: #fff; }
+.header_sessao_h3{color: #757575; font-size: 1.25rem; font-weight: 800; }
+.contato_ul { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+.form_contato { width: 100%; margin: 0px auto; max-width: 442px; }
+.form_contato_li { margin-top: 15px; margin-bottom: 15px; }
+.form_campo_contato { background-color: #fff; border: solid 1px #eee; color: #666; }
+
+
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* FOOTER MAIN */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Rodapé */
+.rodape { width: 100%; padding: 30px 0px; background-color: #000; color: #fff; }
+.titulo_rodape { margin-bottom: 20px; }
+.rodape_h3 { font-size: 1.125rem; font-weight: 800; padding-left: 5px; border-left: solid 5px #fff; }
+.rodape_p { font-size: 0.8125rem; font-weight: 400; line-height: 22px; }
+
+.rodape_li:first-child { align-self: center; }
+.logo_rodape_capa { display: flex; justify-content: center; align-items: center; }
+
+.menu_rodape_a { color: #fff; }
+.menu_rodape_a:hover { color: #ac0000; }
+
+.redes_sociais_li { display: inline-block; margin-right: 10px; }
+.redes_sociais_a { width: 36px; height: 36px; font-size: 0.875rem; display: flex; justify-content: center; align-items: center; background-color: transparent; border: solid 2px #fff; color: #fff; }
+.redes_sociais_a:hover { background-color: #ac0000; border: solid 2px #ac0000; color: #fff; }
+
+/* Copyright */
+.copyright { width: 100%; padding: 10px 0px; background-color: #ac0000; color: #fff; }
+.copyright_p { font-size: 0.8125rem; font-weight: 400; line-height: 20px; text-align: center; }
+.copyright_a { display: flex; flex-wrap: nowrap; align-items: center; color: #fff; }
+.copyright_img { margin-right: 6px; }
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* CSS RESPONSIVO */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Até 575.98px */
+@media (max-width: 575.98px) {
+
+/* Sessão Cards Contato */
+.cards_contato_content { max-width: 280px; }
+
+.lista_banner_capa { overflow: hidden; }
+.lista_banner_img { max-width: 600px; }
+
+}
+
+/**/
+@media (max-width: 767.98px) {
+
+.sessao_pad { padding-top: 50px; padding-bottom: 50px; }
+
+.header_sessao_h2 { font-size: 1.6rem; }
+
+/* Sessão Serviços */
+.servicos_li:nth-child(2) .servicos_container .servicos_txts { order: 2; }
+.servicos_h3 { font-size: 1.125rem; }
+
+.copyright_ul { width: 100%; margin: 0px auto; max-width: 290px; justify-content: center; text-align: center; }
+
+}
+
+
+/* Até 1199.98px */
+@media (max-width: 1199.98px) {
+
+.btn_menu_mobile.active ~ .menu { width: 100%; height: 100%; position: fixed; top: 70px; left: 0px; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; background-color: rgba(0,0,0,0.5); }
+.menu_ul { width: 100%; max-width: 200px; height: 100%; position: fixed; top: 70px; left: -100%; background-color: #eee; }
+.menu_li { margin-bottom: 1px; }
+.menu_a { padding: 10px 15px; display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; background-color: #ddd; color: #000; }
+.menu_a:hover { background-color: #ac0000; color: #fff; }
+
+}
+
+
+/* Até 1200px */
+@media (min-width: 1200px) { 
+
+.cabecalho { height: 90px; }
+
+.logo_img { max-height: 60px; }
+
+.menu_ul { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+.menu_li { margin: 0px 15px; }
+.menu_li:first-child { margin-left: 0px; }
+.menu_li:last-child { margin-right: 0px; }
+.menu_a { padding: 3px 0px; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; border-bottom: solid 2px transparent; color: #fff; }
+.menu_a:hover, .active .menu_a { border-bottom: solid 2px #fff; color: #fff; }
+
+.main_site { margin-top: 90px; }
+
+/* Sessão Banner */
+.sessao_banner .slick-arrow { top: 46%; }
+.sessao_banner .slick-dots { bottom: 30px;
+
+}
