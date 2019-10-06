@@ -236,8 +236,7 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 
 /* Sessão Front-end */
 .sessao_front {background-color: #f0f0f0; color: #757575;}
-.cards_front_end_li{ display: flex; justify-content: center; padding-left: 50px !important;
-    padding-right: 50px !important;}
+.cards_front_end_li{ display: flex; justify-content: center; padding-left: 50px !important; padding-right: 50px !important;}
 .cards_front_end_content { background: rgb(119,14,14); background: linear-gradient(0deg, rgba(119,14,14,1) 0%, rgba(155,13,13,1) 100%); width: 100%; padding: 15px; text-align: center; box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.35); }
 .cards_front_end_capa { width: 100px; height: 100px; background: white; margin: auto; display: flex; justify-content: center; align-items: center; }
 .cards_front_end_txts { padding: 15px; color: #fff;}
@@ -314,6 +313,29 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 /* CSS RESPONSIVO */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
+/* Menu responsivo */
+@media (max-width: 775px){
+  .btn_menu_mobile.active ~ .menu { width: 100%; height: 100%; position: fixed; top: 70px; left: 0px; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; background-color: rgba(0,0,0,0.5); }
+  .menu_ul { width: 100%; max-width: 200px; height: 100%; position: fixed; top: 70px; left: -100%; background-color: #eee; }
+  .menu_li { margin-bottom: 1px; }
+  .menu_a { padding: 10px 15px; display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; background-color: #ddd; color: #000; }
+  .menu_a:hover { background-color: #ac0000; color: #fff; }
+  .redes_sociais_li{margin: 10px}
+  .redes_sociais_a{background-color: black; border: solid 2px #000;}
+  .btn_menu_mobile{display: block;}
+}
+
+@media (min-width: 776px){
+  .menu_ul { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+  .menu_li { margin: 0px 15px; }
+  .menu_li:first-child { margin-left: 0px; }
+  .menu_li:last-child { margin-right: 0px; }
+  .menu_a { padding: 3px 0px; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; border-bottom: solid 2px transparent; color: #fff; }
+  .menu_a:hover, .active .menu_a { border-bottom: solid 2px #fff; color: #fff; }
+  .btn_menu_mobile{display: none;}
+}
+
+
 /* Até 575.98px */
 @media (max-width: 575.98px) {
 
@@ -341,31 +363,21 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 }
 
 
-/* Até 1199.98px */
+/* Até 800px */
 @media (max-width: 1199.98px) {
 
-.btn_menu_mobile.active ~ .menu { width: 100%; height: 100%; position: fixed; top: 70px; left: 0px; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; background-color: rgba(0,0,0,0.5); }
-.menu_ul { width: 100%; max-width: 200px; height: 100%; position: fixed; top: 70px; left: -100%; background-color: #eee; }
-.menu_li { margin-bottom: 1px; }
-.menu_a { padding: 10px 15px; display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; background-color: #ddd; color: #000; }
-.menu_a:hover { background-color: #ac0000; color: #fff; }
+.cards_front_end_li{padding-right: 20px !important; padding-left: 20px !important;}
+.cards_design_li{padding-right: 20px !important; padding-left: 20px !important;}
 
 }
 
 
-/* Até 1200px */
+/* A partir de 1200px */
 @media (min-width: 1200px) { 
 
 .cabecalho { height: 90px; }
 
 .logo_img { max-height: 60px; }
-
-.menu_ul { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
-.menu_li { margin: 0px 15px; }
-.menu_li:first-child { margin-left: 0px; }
-.menu_li:last-child { margin-right: 0px; }
-.menu_a { padding: 3px 0px; font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; border-bottom: solid 2px transparent; color: #fff; }
-.menu_a:hover, .active .menu_a { border-bottom: solid 2px #fff; color: #fff; }
 
 .main_site { margin-top: 90px; }
 
