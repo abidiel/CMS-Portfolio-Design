@@ -314,7 +314,7 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* Menu responsivo */
-@media (max-width: 775px){
+@media (max-width: 750px){
   .btn_menu_mobile.active ~ .menu { width: 100%; height: 100%; position: fixed; top: 70px; left: 0px; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; background-color: rgba(0,0,0,0.5); }
   .menu_ul { width: 100%; max-width: 200px; height: 100%; position: fixed; top: 70px; left: -100%; background-color: #eee; }
   .menu_li { margin-bottom: 1px; }
@@ -325,7 +325,7 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
   .btn_menu_mobile{display: block;}
 }
 
-@media (min-width: 776px){
+@media (min-width: 751px){
   .menu_ul { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
   .menu_li { margin: 0px 15px; }
   .menu_li:first-child { margin-left: 0px; }

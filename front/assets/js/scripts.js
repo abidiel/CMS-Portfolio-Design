@@ -1,13 +1,45 @@
+function scrollMenu() {
+
+	// Equivalente a media queries em javascript
+	if (window.innerWidth > 1200) {
+		// Quando rolar a tela, some o cabeçalho, quando rola para cima volta a aparecer
+		var prevScrollpos = window.pageYOffset;
+		window.onscroll = function() {
+		var currentScrollPos = window.pageYOffset;
+		if (prevScrollpos > currentScrollPos) {
+			document.getElementById("navbar").style.top = "0";
+		} else {
+			document.getElementById("navbar").style.top = "-90px";
+		}
+		prevScrollpos = currentScrollPos;
+		}	 
+	}
+
+	if (window.innerWidth < 1200) {
+		var prevScrollpos = window.pageYOffset;
+		window.onscroll = function() {
+		var currentScrollPos = window.pageYOffset;
+		if (prevScrollpos > currentScrollPos) {
+			document.getElementById("navbar").style.top = "0";
+		} else {
+			document.getElementById("navbar").style.top = "-70px";
+		}
+		prevScrollpos = currentScrollPos;
+		}	 
+	}
+}
+scrollMenu(); // Chama a função scrollMenu ao carregar o js
+
+// Chama a função scrollMenu no evento resize
+window.addEventListener("resize", scrollMenu);
+
+
+
+
+
+
+
 $(function () {
-
-	// Scroll do menu
-	$('.menu_a').click(function() {
-		var goto = $('.'+$(this).attr('href').replace('#', '')).position().top;
-		$('html, body').animate({scrollTop: goto - $('.cabecalho').outerHeight()}, 800);
-		return false;
-	});
-	// Scroll do menu
-
 	// Controles do menu responsivo
 	$('.btn_menu_mobile').click(function(event) {
 	    event.stopPropagation();
@@ -17,7 +49,9 @@ $(function () {
 	    } else {
 	        $(this).removeClass('active');
 	        $('.menu_ul').animate({'left': '-100%'}, 500);
-	    }
+		}
+
+
 	});
 	// Controles do menu responsivo
 
