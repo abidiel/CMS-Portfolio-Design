@@ -247,8 +247,7 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 
 /* Sessão design */
 .sessao_design {background-color: #fff; color: #757575;}
-.cards_design_li{ display: flex; justify-content: center; padding-left: 50px !important;
-    padding-right: 50px !important;}
+.cards_design_li{ display: flex; justify-content: center; padding-left: 50px !important; padding-right: 50px !important;}
 .cards_design_content { background: #f0f0f0; width: 100%; padding: 15px; text-align: center; box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.35); }
 .cards_design_capa { width: 100px; height: 100px; background: rgb(119,14,14); background: linear-gradient(0deg, rgba(119,14,14,1) 0%, rgba(155,13,13,1) 100%); margin: auto; display: flex; justify-content: center; align-items: center; }
 .cards_design_txts { padding: 15px; color: #757575;}
@@ -280,6 +279,66 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 .form_botao_newsletter_span{font-size: 1rem; text-transform: none;}
 .form_botao_newsletter:hover{background-color: #770e02}
 
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* PÁGINA PORTFOLIO ( Listagem e single ) */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Página Blog ( Listagem ) */
+.lista_artigos_article { margin-bottom: 30px; }
+.lista_artigos_article:last-child { margin-bottom: 0px; }
+.lista_artigos_txts { padding-top: 30px; padding-bottom: 30px; text-align: justify; border-bottom: solid 2px #bf0404; }
+.lista_artigos_data_p { display: flex; align-items: center; }
+.lista_artigos_data_i { font-size: 1rem; margin-right: 6px; color: #bf0404; }
+.lista_artigos_data_span { font-size: 0.875rem; color: #666; }
+.lista_artigos_h3 { font-size: 1.25rem; font-weight: 700; line-height: 24px; color: #333; }
+.lista_artigos_h3:hover { color: #bf0404; }
+.lista_artigos_titulo { margin-top: 15px; margin-bottom: 15px; }
+.lista_artigos_p { font-size: 0.875rem; font-weight: 400; line-height: 1.5; }
+.lista_artigos_link { color: #bf0404; }
+
+
+/* Página Blog ( Single ) */
+.lista_artigo_p { margin-bottom: 15px; }
+.lista_artigo_p:last-child { margin-bottom: 0px; }
+
+.compartilhar { margin-top: 30px; margin-bottom: 30px; }
+.compartilhar_ul { display: flex; flex-wrap: wrap; align-items: center; }
+.compartilhar_p { margin-right: 5px; font-size: 1rem; font-weight: 700; color: #bf0404; }
+.share_artigo_li { display: inline-block; }
+.share_artigo_a { width: 30px; height: 30px; margin: 0px 2px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 0.875rem; background-color: #fff; border: solid 2px #bf0404; color: #bf0404; }
+.share_artigo_a:hover { background-color: #bf0404; border: solid 2px #bf0404; color: #fff; }
+
+.comentarios { width: 100%; height: 100px; display: flex; justify-content: center; align-items: center; background-color: #eee; border: 1px solid #ccc; }
+.comentarios_p { font-size: 0.875rem; font-weight: 400; color: #999; }
+
+.controles_paginacao { margin-top: 30px; }
+.controles_paginacao_ul { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+.controles_paginacao_li:nth-child(1) .controles_paginacao_i { margin-right: 6px; }
+.controles_paginacao_li:nth-child(2) .controles_paginacao_i { margin-left: 6px; }
+.controles_paginacao_a { background-color: #fff; border: solid 2px #bf0404; color: #bf0404; }
+.controles_paginacao_a:hover { background-color: #bf0404; border: solid 2px #bf0404; color: #fff; }
+.controles_paginacao_disabled { background-color: #fff; border: solid 2px #bf0404; color: #bf0404; opacity: .5; }
+
+/* Paginação */
+.paginacao { margin-top: 35px; }
+.paginacao_ul { display: flex; flex-wrap: nowrap; justify-content: center; align-items: center; }
+.paginacao_a { width: 36px; height: 36px; margin: 0px 3px; border-radius: 50%; font-size: 0.875rem; font-weight: 700; display: flex; justify-content: center; align-items: center; background-color: #fff; border: solid 2px #bf0404; color: #bf0404; }
+.paginacao_a:hover, .paginacao_active { background-color: #bf0404; border: solid 2px #bf0404; color: #fff; }
+.paginacao_disabled { background-color: #fff; border: solid 2px #bf0404; color: #bf0404; opacity: .5; }
+
+/* Sidebar */
+.acordeon { margin-bottom: 30px; }
+.titulo_sidebar { width: 100%; padding: 10px 15px; font-size: 1rem; font-weight: 700; border-radius: 10px 10px 0px 0px; background-color: #bf0404; color: #fff; }
+.acordeon label { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; cursor: pointer; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; }
+.acordeon ul { background-color: #ccc; border-radius: 0px 0px 10px 10px; }
+.acordeon ul li { margin-bottom: 1px; }
+.acordeon ul li:last-child a { border-radius: 0px 0px 10px 10px; }
+.acordeon ul li a { padding: 10px 15px; overflow: hidden; font-size: 0.8125rem; display: block; cursor: pointer; -webkit-transition: all .5s linear; -moz-transition: all .5s linear; -ms-transition: all .5s linear; -o-transition: all .5s linear; transition: all .5s linear; background-color: #eee; color: #333; }
+.acordeon ul li a:hover { background-color: #ddd; color: #333; }
+.acordeon_item_i { margin-right: 6px; color: #bf0404; }
+.acordeon input { display: none; }
+.acordeon input:checked ~ ul { height: auto; max-height: 200px; transform: all; }
 
 
 
@@ -339,8 +398,6 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 /* Até 575.98px */
 @media (max-width: 575.98px) {
 
-/* Sessão Cards Contato */
-.cards_contato_content { max-width: 280px; }
 
 .lista_banner_capa { overflow: hidden; }
 .lista_banner_img { max-width: 600px; }
@@ -354,9 +411,6 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 
 .header_sessao_h2 { font-size: 1.6rem; }
 
-/* Sessão Serviços */
-.servicos_li:nth-child(2) .servicos_container .servicos_txts { order: 2; }
-.servicos_h3 { font-size: 1.125rem; }
 
 .copyright_ul { width: 100%; margin: 0px auto; max-width: 290px; justify-content: center; text-align: center; }
 

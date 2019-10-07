@@ -1,3 +1,5 @@
+//* JAVA SCRIPT PURO *//
+
 function scrollMenu() {
 
 	// Equivalente a media queries em javascript
@@ -35,9 +37,7 @@ window.addEventListener("resize", scrollMenu);
 
 
 
-
-
-
+//* JQUERY *//
 
 $(function () {
 	// Controles do menu responsivo
@@ -51,6 +51,12 @@ $(function () {
 	        $('.menu_ul').animate({'left': '-100%'}, 500);
 		}
 
+		// fecha o menu ao clicar fora	
+		$('body').on('click', function() {
+			$('.btn_menu_mobile').removeClass('active');
+			$('.menu').animate({'left': '-100%'}, 1000);
+			$('.menu_ul').animate({'left': '-100%'}, 1000);
+		});
 
 	});
 	// Controles do menu responsivo
@@ -77,6 +83,5 @@ $(function () {
 		]
 	});
 	// Controles do banner
-
 
 });
