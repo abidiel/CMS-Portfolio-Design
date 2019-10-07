@@ -158,7 +158,7 @@
 																			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore corporis tenetur, tempore suscipit. Cum, unde voluptatem obcaecati, culpa doloremque est iusto qui mollitia iste ducimus, quo. Dicta necessitatibus ut iure cum illum dolor, adipisci voluptatem placeat, esse fuga. Incidunt, laudantium temporibus ipsa autem expedita saepe molestiae dolorum
 																		</p>
 																		<button class="lista_portfolio_btn transitions3" title="">
-																			<a href="single-portfolio.html">Ver mais</a>
+																			<a href="single-portfolio.php">Ver mais</a>
 																		</button>
 																	</div>
 																		
@@ -189,7 +189,7 @@
 																				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore corporis tenetur, tempore suscipit. Cum, unde voluptatem obcaecati, culpa doloremque est iusto qui mollitia iste ducimus, quo. Dicta necessitatibus ut iure cum illum dolor, adipisci voluptatem placeat, esse fuga. Incidunt, laudantium temporibus ipsa autem expedita saepe molestiae dolorum
 																			</p>
 																			<button class="lista_portfolio_btn transitions3" title="">
-																					<a href="single-portfolio.html">Ver mais</a>
+																					<a href="single-portfolio.php">Ver mais</a>
 																			</button>
 																		</div>
 																			
@@ -220,7 +220,7 @@
 																					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore corporis tenetur, tempore suscipit. Cum, unde voluptatem obcaecati, culpa doloremque est iusto qui mollitia iste ducimus, quo. Dicta necessitatibus ut iure cum illum dolor, adipisci voluptatem placeat, esse fuga. Incidunt, laudantium temporibus ipsa autem expedita saepe molestiae dolorum
 																				</p>
 																				<button class="lista_portfolio_btn transitions3" title="">
-																						<a href="single-portfolio.html">Ver mais</a>
+																						<a href="single-portfolio.php">Ver mais</a>
 																				</button>
 																			</div>
 																				

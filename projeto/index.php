@@ -53,9 +53,9 @@
 
 									<nav class="menu">
 										<ul class="menu_ul hzmp">
-											<li class="menu_li"><a class="menu_a" title="Home" href="index.html">Home</a></li>
-											<li class="menu_li"><a class="menu_a" title="Portfólio" href="list-portfolio.html">Portfólio</a></li>
-											<li class="menu_li"><a class="menu_a" title="Contato" href="contato.html">Contato</a></li>
+											<li class="menu_li"><a class="menu_a" title="Home" href="index.php">Home</a></li>
+											<li class="menu_li"><a class="menu_a" title="Portfólio" href="list-portfolio.php">Portfólio</a></li>
+											<li class="menu_li"><a class="menu_a" title="Contato" href="contato.php">Contato</a></li>
 											<li class="redes_sociais_li">
 												<a class="redes_sociais_a br50 transitions5" title="" target="_blank" href="#">
 													<i class="fab fa-facebook-f redes_sociais_i"></i>
