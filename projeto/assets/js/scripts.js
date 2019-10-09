@@ -1,33 +1,23 @@
 function scrollMenu() {
 
 	// Equivalente a media queries em javascript
-	if (window.innerWidth > 1200) {
+
 		// Quando rolar a tela, some o cabeçalho, quando rola para cima volta a aparecer
 		var prevScrollpos = window.pageYOffset;
 		window.onscroll = function() {
 		var currentScrollPos = window.pageYOffset;
 		if (prevScrollpos > currentScrollPos) {
-			document.getElementById("navbar").style.top = "0";
+			document.querySelector('#navbar').classList.remove('hide_cabecalho')
+			// document.getElementById("navbar").style.top = "0";
 		} else {
-			document.getElementById("navbar").style.top = "-90px";
+			document.querySelector('#navbar').classList.add('hide_cabecalho')
 		}
 		prevScrollpos = currentScrollPos;
 		}	 
-	}
 
-	if (window.innerWidth < 1200) {
-		var prevScrollpos = window.pageYOffset;
-		window.onscroll = function() {
-		var currentScrollPos = window.pageYOffset;
-		if (prevScrollpos > currentScrollPos) {
-			document.getElementById("navbar").style.top = "0";
-		} else {
-			document.getElementById("navbar").style.top = "-70px";
-		}
-		prevScrollpos = currentScrollPos;
-		}	 
-	}
+	
 }
+
 scrollMenu(); // Chama a função scrollMenu ao carregar o js
 
 // Chama a função scrollMenu no evento resize
