@@ -1,5 +1,3 @@
-//* JAVA SCRIPT PURO *//
-
 function scrollMenu() {
 
 	// Equivalente a media queries em javascript
