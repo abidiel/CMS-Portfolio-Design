@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Upload Image in TinyMCE</title>
+
+    <script
+      src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+
+    <script>
+      tinymce.init({
+        selector: "#myTextarea",
+        height: 400,
+        plugins: "code image",
+        toolbar: "undo redo | image code",
+        images_upload_url: "upload.php",
+        images_upload_handler: function(blobInfo, success, failure) {
+          var xhr, formData;
+
+          xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+          xhr.open("POST", "upload.php");
+
+          xhr.onload = function() {
+            var json;
+
+            if (xhr.status != 200) {
+              failure("HTTP Error: " + xhr.status);
+              return;
+            }
+
+            json = JSON.parse(xhr.responseText);
+
+            if (!json || typeof json.location != "string") {
+              failure("invalid JSON: " + xhr.responseText);
+              return;
+            }
+
+            success(json.location);
+          };
+
+          formData = new FormData();
+          formData.append("file", blobInfo.blob(), blobInfo.filename());
+
+          xhr.send(formData);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <textarea id="myTextarea"></textarea>
+  </body>
+</html>
