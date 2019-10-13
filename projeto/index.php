@@ -80,7 +80,6 @@
 			</header>
 			<!-- / header main -->
 
-			<p style="margin-top: 200px; margin-bottom: 200px">
 				
 				<?php
 
@@ -97,8 +96,6 @@
 						include('pages/404.php');
 					}
 				?>
-
-			</p>	
 
 
 
