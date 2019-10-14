@@ -23,7 +23,7 @@
 		<div class="container_site sessao_pad">
             
 
-            <div class="box-login shake-form">
+            <div class="box-login" id="form_login">
                 <?php
                     // se o botão do formulario for clicado
                     if(isset($_POST['acao'])){

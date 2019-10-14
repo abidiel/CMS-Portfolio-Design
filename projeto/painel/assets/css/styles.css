@@ -217,5 +217,18 @@ header {
   }
 
 .loggout{
-  float: right;
+  margin-right: 15px;
+  text-align: right;
+}
+
+.loggout a{
+  color: #fff;
+}
+
+.menu{
+  position: absolute;
+  overflow-y: auto;
+  height: 100%;
+  width: 30%;
+  background:#607d8b;
 }

@@ -72,7 +72,7 @@ $(function () {
 	});
 	// Controles do banner
 	
-	// Shake form error
+	// Shake form error ~parou de funfar
 	$('input[type=submit]').on('click', function(e){
 		e.preventDefault();
 		$("#form_login").addClass('shake-form');
@@ -82,6 +82,7 @@ $(function () {
 		$("#form_login").delay(200).removeClass('shake-form');
 	  });
 	// Shake form error
+
 
 	
 

@@ -1,4 +1,8 @@
-
+<?php
+    if(isset($_GET['loggout'])){
+        Painel::loggout();
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -18,27 +22,35 @@
 	</head>
 
 	<body>
+        
+        <!-- Cabeçalho painel -->
+        <div class="topo_painel">
 
-         <!-- cabeçalho -->
-        <header>
-            <div class="container">
-                
-                <div class="loggout">
-                    <a href="<?php echo INCLUDE_PATH_PAINEL ?>loggout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        oi
-                    </a>
-                </div>
-            </div>
-        </header>
-        <!-- / cabeçalho -->
+            <div class="menu">
 
-		<!-- container login -->
+            <?php 
+                echo 'MENUS';
+            ?>
+            
+            </div class="menu">
+
+            <header>
+
+                    <div class="loggout">
+                        <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Sair
+                        </a>
+                    </div>
+            </header>
+
+        </div>
+        <!-- / Cabeçalho painel -->
+
 		<div class="container sessao_pad">
 oi
 			
 		</div>
-		<!-- / container login -->
 
 		<!-- jQuery / JS / scripts
 		<script src="<?php echo INCLUDE_PATH_PAINEL; ?>assets/js/jquery.min.js"></script>
