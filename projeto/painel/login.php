@@ -21,8 +21,9 @@
 
 		<!-- container login -->
 		<div class="container_site sessao_pad">
+            
 
-            <div class="box-login">
+            <div class="box-login shake-form">
                 <?php
                     // se o botão do formulario for clicado
                     if(isset($_POST['acao'])){
@@ -49,7 +50,13 @@
                         }
                         else{
                             //falha no login
-                            echo '<div class="box-erro br25"><i class="fas fa-times"></i> Usuário ou senha incorretos.</div>';
+                            ?>
+                            <div class="box-erro br25">
+                                <i class="fas fa-times"></i> 
+                                Usuário ou senha incorretos.
+                            </div>
+                            
+                            <?php
                         }
                     }
 
@@ -65,10 +72,9 @@
 		</div>
 		<!-- / container login -->
 
-		<!-- jQuery / JS / scripts
-		<script src="<?php echo INCLUDE_PATH_PAINEL; ?>assets/js/jquery.min.js"></script>
-		<script src="<?php echo INCLUDE_PATH_PAINEL; ?>assets/js/scripts.js"></script>
-		<script src="<?php echo INCLUDE_PATH_PAINEL; ?>assets/libs/slick/slick.min.js"></script>
+		<!-- jQuery / JS / scripts-->
+		<script src="<?php echo INCLUDE_PATH; ?>assets/js/jquery.min.js"></script>
+		<script src="<?php echo INCLUDE_PATH; ?>assets/js/scripts.js"></script>
 		<!-- jQuery / JS / scripts -->
 		
 	</body>

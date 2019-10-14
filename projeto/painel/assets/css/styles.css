@@ -145,6 +145,7 @@ html,body{ height: 100%; background:#d9d9d9;}
 
 .fa-facebook-f:before   { content: "\f39e"; }
 .fa-times:before { content: "\f00d"; }
+.fa-sign-out-alt:before { content: "\f2f5"; }
 
 
 /* FONTE AWESOME --------------------------- */
@@ -186,6 +187,11 @@ html,body{ height: 100%; background:#d9d9d9;}
 .btn_layout 		{ background-color: #ac0000; border: solid 1px #ac0000; color: #fff; }
 .btn_layout:hover 	{ background-color: #ac0000; border: solid 1px #ac0000; color: #fff; }
 
+/* Shake form error */
+.shake-form { -webkit-animation: kf_shake 0.4s 1 linear; -moz-animation: kf_shake 0.4s 1 linear; -o-animation: kf_shake 0.4s 1 linear; }
+@-webkit-keyframes kf_shake { 0% { -webkit-transform: translate(30px); } 20% { -webkit-transform: translate(-30px); } 40% { -webkit-transform: translate(15px); } 60% { -webkit-transform: translate(-15px); } 80% { -webkit-transform: translate(8px); } 100% { -webkit-transform: translate(0px); } }
+@-moz-keyframes kf_shake { 0% { -moz-transform: translate(30px); } 20% { -moz-transform: translate(-30px); } 40% { -moz-transform: translate(15px); } 60% { -moz-transform: translate(-15px); } 80% { -moz-transform: translate(8px); } 100% { -moz-transform: translate(0px); } }
+@-o-keyframes kf_shake { 0% { -o-transform: translate(30px); } 20% { -o-transform: translate(-30px); } 40% { -o-transform: translate(15px); } 60% { -o-transform: translate(-15px); } 80% { -o-transform: translate(8px); } 100% { -o-origin-transform: translate(0px); } }
 
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* Página login */
@@ -195,3 +201,21 @@ html,body{ height: 100%; background:#d9d9d9;}
 .box-login input{margin: 20px 0px 20px 0px;}
 .box-login h2{text-align: center; font-size: 16px; margin: 10px 0px;}
 .box-erro{width: 100%; padding: 8px 2%; text-align: center; background: #ac000094; color: #fff; font-size: 13px;}
+
+
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* Painel de controle */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+header {
+    padding: 10px 0;
+    background: red;
+    width: 100%;
+  }
+
+.loggout{
+  float: right;
+}

@@ -71,5 +71,18 @@ $(function () {
 		]
 	});
 	// Controles do banner
+	
+	// Shake form error
+	$('input[type=submit]').on('click', function(e){
+		e.preventDefault();
+		$("#form_login").addClass('shake-form');
+	  });
+	  
+	  $("#form_login").on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e){
+		$("#form_login").delay(200).removeClass('shake-form');
+	  });
+	// Shake form error
+
+	
 
 });
