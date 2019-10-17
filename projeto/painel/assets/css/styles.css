@@ -16,6 +16,10 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 /* Cor de fundo */
 html,body{ height: 100%; background:#d9d9d9;}
 
+body{
+  overflow-x: hidden;
+}
+
 /* Alinhamento dos textos */
 .text-center  { text-align: center; }
 .text-justify { text-align: justify; }
@@ -194,6 +198,25 @@ html,body{ height: 100%; background:#d9d9d9;}
 @-moz-keyframes kf_shake { 0% { -moz-transform: translate(30px); } 20% { -moz-transform: translate(-30px); } 40% { -moz-transform: translate(15px); } 60% { -moz-transform: translate(-15px); } 80% { -moz-transform: translate(8px); } 100% { -moz-transform: translate(0px); } }
 @-o-keyframes kf_shake { 0% { -o-transform: translate(30px); } 20% { -o-transform: translate(-30px); } 40% { -o-transform: translate(15px); } 60% { -o-transform: translate(-15px); } 80% { -o-transform: translate(8px); } 100% { -o-origin-transform: translate(0px); } }
 
+.w100{
+  width: 100%;
+  background: green !important;
+  
+}
+
+.w50{
+  width: 49%;
+  background: yellow !important;
+}
+
+.left{
+  float: left !important;
+}
+
+.right{
+  float: right !important;
+}
+
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* Página login */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -217,7 +240,8 @@ header {
     padding: 10px 0;
     background: red;
     width: calc(100% - 300px);
-    float: left;
+    position: relative;
+    left: 300px;
   }
 
 .center{padding: 0 2%; margin: 0 auto;}
@@ -236,8 +260,10 @@ div.menu{
   overflow-y: auto;
   height: 100%;
   width: 300px;
-  float: left;
   background:#607d8b;
+  position: fixed;
+  left: 0;
+  right: 0;
 }
 
 .menu_btn{
@@ -288,4 +314,152 @@ div.box_usuario{
   color: #fff;
 
   font-size: 16px;
+}
+
+.content{
+  width: calc(100% - 300px);
+  position: relative;
+  padding: 10px;
+  left: 300px;
+}
+
+.box_content{
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+.itens_menu{
+	margin-top: 30px;
+}
+
+.itens_menu h2{
+	text-align: left;
+	font-weight: normal;
+	font-size: 17px;
+	background: #2F3D42;
+	color: white;
+	padding:8px;
+}
+
+.itens_menu a{
+	display: block;
+	padding: 8px;
+	font-weight: 300;
+	font-size: 16px;
+	text-decoration: none;
+	color: white;
+	border-bottom: 2px solid #2F3D42;
+}
+
+
+/*Box de alerta!*/
+
+.box-alert{
+	width: 100%;
+	padding:8px 0;
+	text-align: center;
+}
+
+.sucesso{
+	background: #a5d6a7;
+	color: white;
+}
+
+.erro{
+	background: #F75353;
+	color: white;
+}
+
+
+
+@media screen and (max-width: 760px){
+  .menu{
+    display: none;
+  }
+  .content{
+    width: 100%;
+    left: 0;
+  }
+  header{
+    left: 0;
+    width: 100%;
+  }
+}
+
+
+
+/*  Estilo forms painel */
+
+/*Formulários de contato do box_content*/
+
+.box_content form{
+  margin:30px 0;
+}
+
+.box_content form label{
+	font-size: 17px;
+	font-weight: 300;
+	color: black;
+	display: block;
+}
+
+.box_content .form-group{
+	margin:15px 0;
+}
+
+.box_content form input[type=text],
+.box_content form input[type=password]
+{
+	margin-top:8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	width: 100%;
+	height: 40px;
+	border: 1px solid #ccc;
+	padding-left: 8px;
+}
+
+.box_content form textarea{
+	margin-top:8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	width: 100%;
+	height: 150px;
+	border: 1px solid #ccc;
+	padding: 8px;
+	resize: vertical;
+}
+
+.box_content form select{
+	margin-top:8px;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	width: 100%;
+	height: 40px;
+	border: 1px solid #ccc;
+	padding-left: 8px;
+}
+
+.box_content form input[type=file]{
+	margin-top:8px;
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+}
+
+.box_content form input[type=submit]{
+	width: 100px;
+	height: 40px;
+	cursor: pointer;
+	margin-top: 10px;
+	font-size: 16px;
+	background: #00bfa5;
+	color: white;
+	border: 0;
 }
