@@ -24,33 +24,47 @@
 	<body>
         
         <!-- Cabeçalho painel -->
-        <div class="topo_painel">
-
             <div class="menu">
+				<div class="box_usuario">
+					<?php 
+						// se possui imagem, mostra ela
+						if($_SESSION['img'] != ''){
+					?>
+					<div class="avatar_usuario">
+						<!-- trazendo imagem conforme link no banco (cadastrado manualmente em primeiro momento) -->
+						<img src="<?php echo INCLUDE_PATH_PAINEL ?>assets/uploads/<?php echo $_SESSION['img']; ?>" />
+					</div>
+					<?php
+					} else{
+					?>
+					<div class="avatar_usuario">
+						<!-- trazendo imagem padrão -->
+						<img src="<?php echo INCLUDE_PATH_PAINEL ?>assets/uploads/sem-imagem.jpg" />
+					</div>
+					<?php } ?>
 
-            <?php 
-                echo 'MENUS';
-            ?>
-            
-            </div class="menu">
+
+					<div class="nome_usuario">
+
+						<!-- Dado dinâmico através de session  -->
+						<p><?php echo $_SESSION['nome']; ?></p>
+						<p><?php echo pegaCargo($_SESSION['cargo']); ?></p>
+					</div>
+				</div>
+            </div>
 
             <header>
-
+					<div class="menu_btn">
+						<i class="fas fa-bars"></i>
+					</div>
                     <div class="loggout">
                         <a href="<?php echo INCLUDE_PATH_PAINEL ?>?loggout">
                             <i class="fas fa-sign-out-alt"></i>
                             Sair
                         </a>
-                    </div>
+					</div>
+					<div class="clear"></div>	
             </header>
-
-        </div>
-        <!-- / Cabeçalho painel -->
-
-		<div class="container sessao_pad">
-oi
-			
-		</div>
 
 		<!-- jQuery / JS / scripts
 		<script src="<?php echo INCLUDE_PATH_PAINEL; ?>assets/js/jquery.min.js"></script>

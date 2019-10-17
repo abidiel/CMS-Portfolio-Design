@@ -1,7 +1,12 @@
 
+
+
+
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-/* RESETS */
+/* CSS Dashboard */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Resets */
 
 * { margin: 0px; padding: 0px; border: none; outline: none; letter-spacing: 0px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; font-size: 100%; font-family: 'Open Sans', sans-serif; }
 ul, ol { list-style: none; }
@@ -56,11 +61,6 @@ html,body{ height: 100%; background:#d9d9d9;}
 .form_campo { padding: 16px 20px; font-size: 1rem; font-weight: 400; background-color: #fff; border: solid 1px #c3c3c3; color: #666; box-shadow: 0 0 8px rgba(33,33,33,.2);}
 .form_campo input:focus{box-shadow: 0px 0 11px rgba(33,33,33,.4);}
 .form_texto { min-height: 100px; }
-
-
-
-
-
 
 /* Helpers */
 .hdno { display: none; }
@@ -146,6 +146,7 @@ html,body{ height: 100%; background:#d9d9d9;}
 .fa-facebook-f:before   { content: "\f39e"; }
 .fa-times:before { content: "\f00d"; }
 .fa-sign-out-alt:before { content: "\f2f5"; }
+.fa-bars:before { content: "\f0c9"; }
 
 
 /* FONTE AWESOME --------------------------- */
@@ -209,26 +210,82 @@ html,body{ height: 100%; background:#d9d9d9;}
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* Painel de controle */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.clear{clear:both;}
+
 
 header {
     padding: 10px 0;
     background: red;
-    width: 100%;
+    width: calc(100% - 300px);
+    float: left;
   }
+
+.center{padding: 0 2%; margin: 0 auto;}
 
 .loggout{
   margin-right: 15px;
   text-align: right;
+  float: right;
 }
 
 .loggout a{
   color: #fff;
 }
 
-.menu{
-  position: absolute;
+div.menu{
   overflow-y: auto;
   height: 100%;
-  width: 30%;
+  width: 300px;
+  float: left;
   background:#607d8b;
+}
+
+.menu_btn{
+  float: left;
+  cursor: pointer;
+  font-size: 23px;
+  color: #fff;
+  margin-left: 18px !important;
+}
+
+
+
+/*  SIDEBAR ESQUERDA */
+div.box_usuario{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.avatar_usuario{
+  
+  border-radius: 50%;
+  text-align: left;
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  border: 3px solid blue;
+  background: red;
+}
+
+.avatar_usuario img{
+  
+  border-radius: 50%;
+}
+
+.avatar_usuario i{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+}
+
+.nome_usuario{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.nome_usuario p{
+  color: #fff;
+
+  font-size: 16px;
 }
