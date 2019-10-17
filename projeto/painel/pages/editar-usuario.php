@@ -1,11 +1,12 @@
 <div class="box_content">
+    
     <h2>Editar usuário.</h2>
 
     <!-- Este parametro em enctype é para permitir o envio de imagens -->
     <form method="post" enctype="multipart/form-data">
 
         <?php
-            if(isset($_['acao'])){
+            if(isset($_POST['acao'])){
                 //enviou o form.
                 Painel::alerta('sucesso','Cadastrado com sucesso!');
             }

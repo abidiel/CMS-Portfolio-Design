@@ -236,25 +236,10 @@ body{
 .clear{clear:both;}
 
 
-header {
-    padding: 10px 0;
-    background: red;
-    width: calc(100% - 300px);
-    position: relative;
-    left: 300px;
-  }
-
+header { padding: 10px 0; background: red; width: calc(100% - 300px); position: relative; left: 300px; }
 .center{padding: 0 2%; margin: 0 auto;}
-
-.loggout{
-  margin-right: 15px;
-  text-align: right;
-  float: right;
-}
-
-.loggout a{
-  color: #fff;
-}
+.loggout{ margin-right: 15px; text-align: right; float: right; }
+.loggout a{ color: #fff; }
 
 div.menu{
   overflow-y: auto;

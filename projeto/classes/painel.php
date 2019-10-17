@@ -32,10 +32,9 @@
         }
 
         public static function alerta($tipo, $mensagem){
-            echo 'ENTROU NA FUNCAO ALERTA';
             if($tipo == 'sucesso'){
                 echo '<div class="sucesso">'.$mensagem.'</div>';
-            }else if($type == 'erro'){
+            }else if($tipo == 'erro'){
                 echo '<div class="erro">'.$mensagem.'</div>'; 
             }
         }
