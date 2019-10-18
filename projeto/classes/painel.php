@@ -33,9 +33,9 @@
 
         public static function alerta($tipo, $mensagem){
             if($tipo == 'sucesso'){
-                echo '<div class="sucesso">'.$mensagem.'</div>';
+                echo '<div class="box_alert sucesso"><i class="fas fa-check"></i>'.$mensagem.'</div>';
             }else if($tipo == 'erro'){
-                echo '<div class="erro">'.$mensagem.'</div>'; 
+                echo '<div class="box_alert erro"><i class="fas fa-exclamation-triangle"></i>'.$mensagem.'</div>'; 
             }
         }
     

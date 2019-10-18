@@ -8,7 +8,7 @@
         <?php
             if(isset($_POST['acao'])){
                 //enviou o form.
-                Painel::alerta('sucesso','Cadastrado com sucesso!');
+                Painel::alerta('sucesso','Atualizado com sucesso!');
             }
         ?>
 

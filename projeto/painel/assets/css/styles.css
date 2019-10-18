@@ -151,6 +151,8 @@ body{
 .fa-times:before { content: "\f00d"; }
 .fa-sign-out-alt:before { content: "\f2f5"; }
 .fa-bars:before { content: "\f0c9"; }
+.fa-check:before { content: "\f00c"; }
+.fa-exclamation-triangle:before { content: "\f071"; }
 
 
 /* FONTE AWESOME --------------------------- */
@@ -217,6 +219,7 @@ body{
   float: right !important;
 }
 
+
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* Página login */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -225,8 +228,6 @@ body{
 .box-login input{margin: 20px 0px 20px 0px;}
 .box-login h2{text-align: center; font-size: 16px; margin: 10px 0px;}
 .box-erro{width: 100%; padding: 8px 2%; text-align: center; background: #ac000094; color: #fff; font-size: 13px;}
-
-
 
 
 
@@ -310,7 +311,7 @@ div.box_usuario{
 
 .box_content{
   background: #fff;
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 10px;
 }
 
@@ -342,23 +343,10 @@ div.box_usuario{
 
 /*Box de alerta!*/
 
-.box-alert{
-	width: 100%;
-	padding:8px 0;
-	text-align: center;
-}
-
-.sucesso{
-	background: #a5d6a7;
-	color: white;
-}
-
-.erro{
-	background: #F75353;
-	color: white;
-}
-
-
+.box_alert{ width: 100%; padding:8px 0; text-align: center; margin-bottom: 30px;  }
+.sucesso{ background: #3e9f42; color: white; }
+.erro{ background: #F75353; color: white; }
+.box_alert i{ margin-right: 10px; }
 
 @media screen and (max-width: 760px){
   .menu{
@@ -376,9 +364,17 @@ div.box_usuario{
 
 
 
+
+
 /*  Estilo forms painel */
 
 /*Formulários de contato do box_content*/
+
+.form_group{margin: 10px 0px 10px 0px;}
+
+.box_content h2{
+  font-size: 1.5rem;
+}
 
 .box_content form{
   margin:30px 0;
