@@ -46,9 +46,10 @@
                             $info = $sql->fetch();
 
                             //logado com sucesso
+                            $_SESSION['id_usuario'] = $info['id'];
                             $_SESSION['login'] = true;
-                            $_SESSION['user'] = user;
-                            $_SESSION['password'] = password;
+                            $_SESSION['user'] = $info['user'];
+                            $_SESSION['password'] = $info['password'];
                             $_SESSION['cargo'] = $info['cargo'];
                             $_SESSION['nome'] = $info['nome'];
                             $_SESSION['img'] = $info['img'];
@@ -71,7 +72,7 @@
                 <h2>Efetue o login</h2>
                 <form method="post">
                     <input type="text" name="user" placeholder="Login..." class="br25 form_f form_campo" required>
-                    <input type="text" name="password" placeholder="Senha..." class="br25 form_f form_campo" required>
+                    <input type="password" name="password" placeholder="Senha..." class="br25 form_f form_campo" required>
                     <input type="submit" name="acao" value="Logar!" class="btn_ btn_xl btn_layout br25">
                 </form>     
             </div>

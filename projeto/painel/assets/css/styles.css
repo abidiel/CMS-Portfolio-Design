@@ -416,8 +416,7 @@ div.box_usuario{
 	resize: vertical;
 }
 
-.box_content form select{
-	margin-top:8px;
+.box_content form select{ margin-top:8px;
 	font-size: 16px;
 	font-weight: normal;
 	color: black;

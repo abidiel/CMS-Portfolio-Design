@@ -37,7 +37,8 @@
 			'1' => 'Sub Administrador',
 			'2' => 'Administrador'
 		];
-
 		return $arr[$cargo];
 	}
+
+	
 ?>
