@@ -64,7 +64,11 @@
             }
 
         }
-
+        
+        public static function deleteFIle($file){
+            // o @ na frente da função é para ocultar o warning
+            @unlink('assets/uploads/'.$file);
+        }
 
 
 

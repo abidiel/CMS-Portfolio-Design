@@ -26,9 +26,10 @@
                 if($imagem['name'] != ''){
 
                     if(Painel::imagemValida($imagem)){
+                        Painel::deleteFile($imagem_atual);
                         $imagem = Painel::uploadFile($imagem);
                         if($usuario->atualizarUsuario($user, $id_usuario, $nome, $senha, $imagem, $cargo)){
-                            // AGR $_SESSION['img'] = $imagem;
+                            $_SESSION['img'] = $imagem;
                             Painel::alerta('sucesso','Atualizado com sucesso junto com a imagem');
                         } else {
                             Painel::alerta('erro','Ocorreu um erro ao atualizar junto com a imagem');
