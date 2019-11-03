@@ -32,6 +32,7 @@
 					?>
 					<div class="avatar_usuario">
 						<!-- trazendo imagem conforme link no banco (cadastrado manualmente em primeiro momento) -->
+						
 						<img src="<?php echo INCLUDE_PATH_PAINEL ?>assets/uploads/<?php echo $_SESSION['img']; ?>" />
 					</div>
 					<?php
@@ -48,7 +49,6 @@
 
 						<!-- Dado dinâmico através de session  -->
 						<p><?php echo $_SESSION['nome']; ?></p>
-						<p><?php echo pegaCargo($_SESSION['cargo']); ?></p>
 					</div>
 				</div>
 
@@ -62,8 +62,8 @@
 					<a href="#">Listar Serviço</a>					
 					<a href="#">Listar Slides</a>					
 					<h2>Administração do painel</h2>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar usuários</a>
-					<a href="#">Adicionar usuários</a>			
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar usuário</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar usuário</a>			
 					<h2>Configuração geral</h2>
 					<a href="#">Editar</a></a>				
 					

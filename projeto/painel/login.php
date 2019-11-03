@@ -50,7 +50,6 @@
                             $_SESSION['login'] = true;
                             $_SESSION['user'] = $info['user'];
                             $_SESSION['password'] = $info['password'];
-                            $_SESSION['cargo'] = $info['cargo'];
                             $_SESSION['nome'] = $info['nome'];
                             $_SESSION['img'] = $info['img'];
                             header('Location: '.INCLUDE_PATH_PAINEL);

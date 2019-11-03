@@ -1,8 +1,6 @@
-
-
 <div class="box_content">
     
-    <h2 class="title_content">Editar usuário.</h2>
+    <h2 class="title_content">Editar usuário</h2>
 
     <!-- Este parametro em enctype é para permitir o envio de imagens -->
     <form method="post" enctype="multipart/form-data">
@@ -12,12 +10,10 @@
 
                 $id_usuario = $_POST['id_usuario'];
                 $user = $_POST['user'];
-                $cargo = $_POST['cargo'];
                 $nome = $_POST['nome'];
                 $senha = $_POST['password'];
                 $imagem = $_FILES['imagem'];
                 $imagem_atual = $_POST['imagem_atual'];
-                $usuario = new Usuario();
 
                 //instanciando da classe Usuario.
                 $usuario = new Usuario();   
@@ -26,9 +22,9 @@
                 if($imagem['name'] != ''){
 
                     if(Painel::imagemValida($imagem)){
-                        Painel::deleteFile($imagem_atual);
+                        // Painel::deleteFile($imagem_atual);
                         $imagem = Painel::uploadFile($imagem);
-                        if($usuario->atualizarUsuario($user, $id_usuario, $nome, $senha, $imagem, $cargo)){
+                        if($usuario->atualizarUsuario($user, $id_usuario, $nome, $senha, $imagem)){
                             $_SESSION['img'] = $imagem;
                             Painel::alerta('sucesso','Atualizado com sucesso junto com a imagem');
                         } else {
@@ -43,7 +39,7 @@
                 }else{
                     $imagem = $imagem_atual;       
                     
-                    if($usuario->atualizarUsuario($user, $id_usuario, $nome, $senha, $imagem, $cargo)){
+                    if($usuario->atualizarUsuario($user, $id_usuario, $nome, $senha, $imagem)){
                         $_SESSION['img'] = $imagem;
                         Painel::alerta('sucesso','Atualizado com sucesso');
                     } else {
@@ -52,7 +48,6 @@
                 }
             }
         ?>
-
 
         <!-- Os valores do value de cada campo são dinamicos, trazidos do banco. -->
         <div class="form_group">
@@ -76,14 +71,7 @@
             <input type="hidden" name="imagem_atual" value="<?php echo $_SESSION['img']; ?>">
         </div>
 
-        <div class="form_group">
-            <select name="cargo">
-                <option value="0">Cargo 0</option>
-                <option value="1">Cargo 1</option>
-                <option value="2">Cargo 2</option>
-            </select>
-        </div>
-
+        <!-- input oculto para passar o id do usuario -->
         <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario'];?>">
 
         <div class="form_group">

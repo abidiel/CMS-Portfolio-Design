@@ -18,7 +18,6 @@ CREATE TABLE IF NOT EXISTS `tb_admin_usuarios` (
   `password` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `cargo` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 

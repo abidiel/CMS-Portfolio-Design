@@ -57,8 +57,11 @@
         }
         
         public static function uploadFile($file){
-            if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/assets/uploads/'.$file['name'])){
-                return $file['name'];
+            // fazendo com que a imagem tem um nome unico.
+            $formatoArquivo = explode('.',$file['name']);
+            $imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
+            if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/assets/uploads/'.$imagemNome)){
+                return $imagemNome;
             }else{
                 return false;
             }
