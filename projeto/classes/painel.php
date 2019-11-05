@@ -9,6 +9,8 @@
         }
 
         public static function loggout(){
+            // setando valor negativo para limpar o cookie
+            setcookie('lembrar',true,time()-1,'/');
             session_destroy();
             header('Location: '.INCLUDE_PATCH_PAINEL);
         }
@@ -71,6 +73,48 @@
         public static function deleteFIle($file){
             // o @ na frente da função é para ocultar o warning
             @unlink('assets/uploads/'.$file);
+        }
+
+        public static function insert($arr){
+            $certo = true;
+            $nome_tabela = $arr['nome_tabela'];
+            $query = "INSERT INTO $nome_tabela VALUES (null";
+            foreach ($arr as $key => $value){
+                $nome = $key;
+                $valor = $value;
+                
+                // se for o valor do campo submit (que não deve ser inserido)
+                // segue rodando
+                if($nome == 'acao' || $nome == 'nome_tabela'){
+                    continue;
+                }
+                    
+                // se tiver campo em branco
+                if($value == ''){
+                    $certo = false;
+                    break;
+                }
+                $query.=",?";
+                $parametros[] = $value;
+            }
+
+            // concatenado o final do loop
+            $query.=")";
+            if($certo == true){
+                $sql = MySql::conectar()->prepare($query);
+                $sql->execute($parametros);
+            }
+            return $certo;
+        }
+
+        public static function selectAll($tabela,$start = null, $end = null){
+            if($start == null && $end == null){
+                $sql = MySql::conectar()->prepare("SELECT * FROM $tabela");
+            }else{
+                $sql = MySql::conectar()->prepare("SELECT * FROM $tabela LIMIT $start,$end");
+            }
+            $sql->execute();
+            return $sql->fetchAll();
         }
 
 

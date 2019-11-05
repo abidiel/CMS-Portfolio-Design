@@ -63,7 +63,7 @@
         <input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario'];?>">
 
         <div class="form_group">
-            <input type="submit" name="acao" value="Atualizar!">
+            <input type="submit" name="acao" value="Cadastrar!">
         </div> 
 
     </form>

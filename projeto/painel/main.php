@@ -52,20 +52,29 @@
 					</div>
 				</div>
 
-				<div class="itens_menu">
-					<h2>Cadastro</h2>
-					<a href="#">Cadastrar Depoimento</a>
-					<a href="#">Cadastrar Serviço</a>
-					<a href="#">Cadastrar Slides</a>
-					<h2>Gestão</h2>
-					<a href="#">Listar Depoimento</a>
-					<a href="#">Listar Serviço</a>					
-					<a href="#">Listar Slides</a>					
-					<h2>Administração do painel</h2>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar usuário</a>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar usuário</a>			
+				<div class="itens_menu ">
+					
 					<h2>Configuração geral</h2>
 					<a href="#">Editar</a></a>				
+
+					<h2>Usuários</h2>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar usuário</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar usuário</a>	
+
+					<h2>Depoimentos</h2>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimentos">Cadastrar depoimentos</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar depoimento</a>
+
+					<h2>Serviços</h2>
+					<a href="#">Cadastrar Serviços</a>
+					<a href="#">Listar Serviço</a>	
+
+					<h2>Banners</h2>
+					<a href="#">Cadastrar banner</a>
+					<a href="#">Listar banner</a>
+					
+									
+										
 					
 				</div>
 
@@ -95,6 +104,7 @@
 			
 		<!-- jQuery / JS / scripts -->
 		<script src="<?php echo INCLUDE_PATH; ?>assets/js/jquery.min.js"></script>
+		<script src="<?php echo INCLUDE_PATH_PAINEL; ?>assets/js/jquery.mask.js"></script>
 		<script src="<?php echo INCLUDE_PATH_PAINEL; ?>assets/js/scripts.js"></script>
 		<!-- jQuery / JS / scripts 
 		

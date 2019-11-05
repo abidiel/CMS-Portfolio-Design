@@ -1,4 +1,24 @@
 
+<?php 
+    if(isset($_COOKIE['lembrar'])){
+        $user = $_COOKIE['lembrar'];
+        $password = $_COOKIE['password'];
+
+        $sql = MySql::conectar()->prepare("SELECT * FROM tb_admin_usuarios WHERE user = ? AND password = ?");
+        $sql->execute(array($user,$password));
+        if($sql->rowCount() == 1){
+            $info = $sql->fetch();
+            $_SESSION['id_usuario'] = $info['id'];
+            $_SESSION['login'] = true;
+            $_SESSION['user'] = $info['user'];
+            $_SESSION['password'] = $info['password'];
+            $_SESSION['nome'] = $info['nome'];
+            $_SESSION['img'] = $info['img'];           
+            header('Location: '.INCLUDE_PATH_PAINEL);
+            die();
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -52,6 +72,14 @@
                             $_SESSION['password'] = $info['password'];
                             $_SESSION['nome'] = $info['nome'];
                             $_SESSION['img'] = $info['img'];
+                            if(isset($_POST['lembrar'])){
+                                // cookie de um dia
+                                // esse parametro '/' serve para aplicar em todo site
+                                // minimiza a chance de erro
+                                setcookie('lembrar',true,time()+(60*60*24),'/');
+                                setcookie('user',$user,time()+(60*60*24),'/');
+                                setcookie('password',$password,time()+(60*60*24),'/');
+                            }
                             header('Location: '.INCLUDE_PATH_PAINEL);
                             die();
                         }
@@ -72,7 +100,11 @@
                 <form method="post">
                     <input type="text" name="user" placeholder="Login..." class="br25 form_f form_campo" required>
                     <input type="password" name="password" placeholder="Senha..." class="br25 form_f form_campo" required>
-                    <input type="submit" name="acao" value="Logar!" class="btn_ btn_xl btn_layout br25">
+                        <input type="submit" name="acao" value="Logar!" class="btn_ btn_xl btn_layout br25">
+                    <div class="form-group-login">
+                        <input type="checkbox" name="lembrar">
+                        <label>Lembrar-me</label>
+                    </div>      
                 </form>     
             </div>
 			

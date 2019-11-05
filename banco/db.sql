@@ -28,6 +28,25 @@ INSERT INTO `tb_admin_usuarios` (`id`, `user`, `password`, `img`, `nome`, `cargo
 	(2, 'abidiel', '123456', 'aaaaaaaa.jpg', 'Abidiel Bulsing', 0);
 /*!40000 ALTER TABLE `tb_admin_usuarios` ENABLE KEYS */;
 
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+-- Copiando estrutura para tabela portfolio.tb_site_depoimentos
+CREATE TABLE IF NOT EXISTS `tb_site_depoimentos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `depoimento` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+-- Copiando estrutura para tabela portfolio.tb_site_depoimentos
+CREATE TABLE IF NOT EXISTS `tb_site_depoimentos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `depoimento` text NOT NULL,
+  `data` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela portfolio.tb_site_depoimentos: ~1 rows (aproximadamente)
+/*!40000 ALTER TABLE `tb_site_depoimentos` DISABLE KEYS */;
+INSERT INTO `tb_site_depoimentos` (`id`, `nome`, `depoimento`, `data`) VALUES
+	(16, 'Guilherme', 'teste', ''),
+	(17, 'abdul', 'depoimento de teste', '');
