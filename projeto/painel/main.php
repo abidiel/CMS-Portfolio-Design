@@ -59,11 +59,12 @@
 
 					<h2>Usuários</h2>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar usuário</a>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar usuário</a>	
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-usuarios">Listar usuários</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar usuários</a>	
 
 					<h2>Depoimentos</h2>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar depoimentos</a>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimentos">Cadastrar depoimentos</a>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar depoimento</a>
 
 					<h2>Serviços</h2>
 					<a href="#">Cadastrar Serviços</a>
