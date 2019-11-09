@@ -51,6 +51,8 @@ $(function(){
     // 
     $('[actionBtn=delete]').click(function(){
         var txt;
+
+        //variavel r guarda o retorno da funcao confirm (nativa do js)
         var r = confirm("Tem certeza que quer deletar?");
         if (r == true){
            return true;

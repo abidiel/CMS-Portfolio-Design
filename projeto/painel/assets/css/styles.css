@@ -154,6 +154,8 @@ body{
 .fa-bars:before { content: "\f0c9"; }
 .fa-check:before { content: "\f00c"; }
 .fa-exclamation-triangle:before { content: "\f071"; }
+.fa-angle-up:before { content: "\f106"; }
+.fa-angle-down:before { content: "\f107"; }
 
 
 /* FONTE AWESOME --------------------------- */
@@ -505,3 +507,15 @@ table td{
 .paginacao a.page_active{
   background: rgb(220,220,220);
 }
+
+table a.btn{
+	font-weight: normal;
+	font-size: 13px;
+	color: white;
+	text-decoration: none;
+	padding: 4px 6px;
+}
+
+a.btn.order{background: #0091ea;}
+
+.thumb_painel {height: 70px}

@@ -70,7 +70,7 @@
 
         }
         
-        public static function deleteFIle($file){
+        public static function deleteFile($file){
             // o @ na frente da função é para ocultar o warning
             @unlink('assets/uploads/'.$file);
         }
@@ -103,15 +103,21 @@
             if($certo == true){
                 $sql = MySql::conectar()->prepare($query);
                 $sql->execute($parametros);
+                $lastId = MySql::conectar()->lastInsertId();
+                $sql = MySql::conectar()->prepare("UPDATE $nome_tabela SET order_id = ? WHERE id = $lastId");
+
+                // a  funcao last insert id é nativa do pdo
+                // ela nos retorna o ultimo registro inserido  
+                $sql->execute(array($lastId));
             }
             return $certo;
         }
 
         public static function selectAll($tabela,$start = null, $end = null){
             if($start == null && $end == null){
-                $sql = MySql::conectar()->prepare("SELECT * FROM $tabela");
+                $sql = MySql::conectar()->prepare("SELECT * FROM $tabela ORDER BY order_id ASC");
             }else{
-                $sql = MySql::conectar()->prepare("SELECT * FROM $tabela LIMIT $start,$end");
+                $sql = MySql::conectar()->prepare("SELECT * FROM $tabela  ORDER BY order_id ASC LIMIT $start,$end");
             }
             $sql->execute();
             return $sql->fetchAll();
@@ -126,8 +132,93 @@
             $sql->execute();
         }
 
+        public static function redirect($url){
+            echo '<script>location.href="'.$url.'"</script>';
+
+            // interrompe o script
+            die();
+
+        }
+
+        // metodo para selecionar apenas 1 registro.
+        public static function select($table, $query, $arr){
+            $sql = MySql::conectar()->prepare("SELECT * FROM $table WHERE $query");
+            $sql->execute($arr);
+            return $sql->fetch();
+        }
 
 
+        public static function update($arr){
+            $certo = true;
+            $first = false;
+            $nome_tabela = $arr['nome_tabela'];
+            $query = "UPDATE $nome_tabela SET ";
+            foreach ($arr as $key => $value){
+                $nome = $key;
+                $valor = $value;
+                
+                // se for o valor do campo submit (que não deve ser inserido)
+                // segue rodando
+                if($nome == 'acao' || $nome == 'nome_tabela' || $nome == 'id'){
+                    continue;
+                }
+                    
+                // se tiver campo em branco
+                if($value == ''){
+                    $certo = false;
+                    break;
+                }
+                
+                if($first == false){
+                    $first = true;
+                    $query.="$nome=?";
+                }
+                else{
+                    $query.=",$nome=?";
+                }
+                $parametros[] = $value;
+            }
+
+            // concatenado o final do loop
+            if($certo == true){
+                $parametros[] = $arr['id'];
+                $sql = MySql::conectar()->prepare($query.' WHERE id=?');
+                $sql->execute($parametros);
+            }
+            return $certo;
+        }        
+
+        public static function orderItem($tabela, $orderType, $idItem){
+            if ($orderType == 'up'){
+                $infoItemAtual = Painel::select($tabela,'id=?',array($idItem));
+                $order_id = $infoItemAtual['order_id'];
+                $itemBefore = MySql::conectar()->prepare("SELECT * FROM $tabela WHERE order_id < $order_id ORDER BY order_id DESC LIMIT 1");
+                $itemBefore->execute();
+
+                // se nao tiver nenhum item, segue a execução
+                if($itemBefore->rowCount() == 0){
+                    return;
+                }
+                $itemBefore = $itemBefore->fetch();
+                Painel::update(array('nome_tabela' => $tabela, 'id' => $itemBefore['id'], 'order_id'=>$infoItemAtual['order_id']));
+                Painel::update(array('nome_tabela' => $tabela, 'id' => $infoItemAtual['id'], 'order_id'=>$itemBefore['order_id']));
+
+            }else if ($orderType == 'down'){
+
+                $infoItemAtual = Painel::select($tabela,'id=?',array($idItem));
+                $order_id = $infoItemAtual['order_id'];
+                $itemBefore = MySql::conectar()->prepare("SELECT * FROM $tabela WHERE order_id > $order_id ORDER BY order_id ASC LIMIT 1");
+                $itemBefore->execute();
+
+                // se nao tiver nenhum item, segue a execução
+                if($itemBefore->rowCount() == 0){
+                    return;
+                }
+                $itemBefore = $itemBefore->fetch();
+                Painel::update(array('nome_tabela' => $tabela, 'id' => $itemBefore['id'], 'order_id'=>$infoItemAtual['order_id']));
+                Painel::update(array('nome_tabela' => $tabela, 'id' => $infoItemAtual['id'], 'order_id'=>$itemBefore['order_id']));
+            }
+        }
     
     }
 

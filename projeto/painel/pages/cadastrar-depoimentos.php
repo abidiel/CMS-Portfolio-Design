@@ -33,6 +33,7 @@
 
         <div class="form_group">
             <input type="hidden" name="nome_tabela" value="tb_site_depoimentos">
+            <input type="hidden" name="order_id" value="0">
             <input type="submit" name="acao" value="Cadastrar!">
         </div> 
 

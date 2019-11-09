@@ -3,6 +3,10 @@
     if(isset($_GET['excluir'])){
         $idExcluir = intval($_GET['excluir']);
         Painel::deletar('tb_admin_usuarios',$idExcluir);
+
+        //apos deletar, redirecionar
+        //isso é feito pois o os parametros da exclusao ficam na url
+        Painel::redirect(INCLUDE_PATH_PAINEL.'listar-usuarios');
     }
 
 
@@ -24,7 +28,6 @@
                 <td>Nome:</td>
                 <td>Usuário:</td>
                 <td>-</td>
-                <td>-</td>
             </tr>
 
             <?php
@@ -34,8 +37,7 @@
             <tr>
                 <td><?php echo $value['nome']; ?></td>
                 <td><?php echo $value['user']; ?></td>
-                <td><a href="#" class="btn_ edit"><i class="fa fa-edit"></i> Editar</a></td>
-                <td><a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-usuarios?excluir=<?php echo $value['id']; ?>" class="btn_ delete"><i class="fa fa-times"></i> Excluir</a></td>
+                <td><a actionBtn="delete" href="<?php echo INCLUDE_PATH_PAINEL ?>listar-usuarios?excluir=<?php echo $value['id']; ?>" class="btn_ delete"><i class="fa fa-times"></i> Excluir</a></td>
                 
             </tr>
                 <?php } ?>

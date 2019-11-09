@@ -66,13 +66,10 @@
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar depoimentos</a>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimentos">Cadastrar depoimentos</a>
 
-					<h2>Serviços</h2>
-					<a href="#">Cadastrar Serviços</a>
-					<a href="#">Listar Serviço</a>	
 
 					<h2>Banners</h2>
-					<a href="#">Cadastrar banner</a>
-					<a href="#">Listar banner</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-banner">Cadastrar banner</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-banners">Listar banner</a>
 					
 									
 										

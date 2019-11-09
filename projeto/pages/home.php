@@ -10,29 +10,23 @@
 				<div class="lista_banner">
 					<ul class="lista_banner_ul hzmp">
 
-						<li class="lista_banner_li">
-							<div class="lista_banner_content">
-								<div class="lista_banner_capa">
-									<img src="<?php echo INCLUDE_PATH; ?>assets/images/banner_home01.jpg" alt="" title="" class="lista_banner_img img-fluid" />
-								</div>
-							</div>
-						</li>
+					<?php
+							$sql = MySql::conectar()->prepare("SELECT * FROM tb_site_slides ORDER BY order_id ASC LIMIT 3");
+							$sql->execute();
+							$slides = $sql->fetchAll();
+							foreach ($slides as $key => $value){
+						?>
+
 
 						<li class="lista_banner_li">
 							<div class="lista_banner_content">
 								<div class="lista_banner_capa">
-									<img src="<?php echo INCLUDE_PATH; ?>assets/images/banner_home01.jpg" alt="" title="" class="lista_banner_img img-fluid" />
+									<img src="<?php echo INCLUDE_PATH_PAINEL?>assets/uploads/<?php echo $value['slide']; ?>" alt="" title="" class="lista_banner_img img-fluid" />
 								</div>
 							</div>
 						</li>
 
-						<li class="lista_banner_li">
-							<div class="lista_banner_content">
-								<div class="lista_banner_capa">
-									<img src="<?php echo INCLUDE_PATH; ?>assets/images/banner_home01.jpg" alt="" title="" class="lista_banner_img img-fluid" />
-								</div>
-							</div>
-						</li>
+					<?php } ?>
 
 					</ul>
 				</div>
@@ -205,23 +199,12 @@
 				<div class="cards_depoimentos">
 					<ul class="cards_depoimentos_ul row justify-content-center hzmp">
 						
-						<li class="cards_depoimentos_li col-12 col-sm-8 col-md-6 col-lg-4 marginTopBottom">
-							<div class="cards_depoimentos_content br10">
-								<div class="cards_depoimentos_capa br50">
-									<i class="fas fa-quote-left cards_i"></i>
-								</div>
-								<div class="cards_depoimentos_conteudos">
-									<div class="cards_depoimentos_txts">
-										<div class="cards_depoimentos_texto">
-											<h3 class="cards_depoimentos_h3 hzmp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h3>
-										</div>
-										<div class="cards_depoimentos_titulo">
-											<h2 class="cards_depoimentos_h2 hzmp">Nome do cliente.</h2>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
+						<?php
+							$sql = MySql::conectar()->prepare("SELECT * FROM tb_site_depoimentos ORDER BY order_id ASC LIMIT 3");
+							$sql->execute();
+							$depoimentos = $sql->fetchAll();
+							foreach ($depoimentos as $key => $value){
+						?>
 
 						<li class="cards_depoimentos_li col-12 col-sm-8 col-md-6 col-lg-4 marginTopBottom">
 							<div class="cards_depoimentos_content br10">
@@ -231,33 +214,18 @@
 								<div class="cards_depoimentos_conteudos">
 									<div class="cards_depoimentos_txts">
 										<div class="cards_depoimentos_texto">
-											<h3 class="cards_depoimentos_h3 hzmp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h3>
+											<h3 class="cards_depoimentos_h3 hzmp"><?php echo $value['depoimento']; ?></h3>
 										</div>
 										<div class="cards_depoimentos_titulo">
-											<h2 class="cards_depoimentos_h2 hzmp">Nome do cliente.</h2>
+											<h2 class="cards_depoimentos_h2 hzmp"><?php echo $value['nome']; ?></h2>
+											<h1 class="cards_depoimentos_h1 hzmp"><?php echo $value['data']; ?></h1>
 										</div>
 									</div>
 								</div>
 							</div>
 						</li>
 
-						<li class="cards_depoimentos_li col-12 col-sm-8 col-md-6 col-lg-4 marginTopBottom">
-							<div class="cards_depoimentos_content br10">
-								<div class="cards_depoimentos_capa br50">
-									<i class="fas fa-quote-left cards_i"></i>
-								</div>
-								<div class="cards_depoimentos_conteudos">
-									<div class="cards_depoimentos_txts">
-										<div class="cards_depoimentos_texto">
-											<h3 class="cards_depoimentos_h3 hzmp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h3>
-										</div>
-										<div class="cards_depoimentos_titulo">
-											<h2 class="cards_depoimentos_h2 hzmp">Nome do cliente.</h2>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
+						<?php } ?>
 
 					</ul>
 				</div>		
