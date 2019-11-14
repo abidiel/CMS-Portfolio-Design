@@ -1,4 +1,10 @@
-<?php include ('config.php'); ?>
+<?php 
+	include ('config.php'); 
+    $infoSite = MySql::conectar()->prepare("SELECT * FROM tb_site_config");
+    $infoSite->execute();
+    $infoSite = $infoSite ->fetch();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 	<head>
@@ -8,7 +14,7 @@
 		<meta name="robots" content="index, follow" />
 		<meta name="description" content="" />
 
-		<title>John's Portfólio - Página inicial</title>
+		<title><?php echo $infoSite['titulo']; ?></title>
 
 		<!-- css -->
 		<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>style.css" />

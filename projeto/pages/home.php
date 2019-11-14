@@ -47,7 +47,7 @@
 
 				<div class="row justify-content-center">
 					<div class="header_sessao text-center">
-							<h2 class="header_sessao_h2 hzmp">John Front-end e Designer</h2>
+							<h2 class="header_sessao_h2 hzmp"><?php echo $infoSite['nome_autor'] ?></h2>
 					</div>	
 				</div>
 
@@ -55,7 +55,7 @@
 					<div class="sobre_txts col-11 col-md-8 marginTopBottom">
 						<div class="sobre_texto">
 							<p class="sobre_p">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae quis voluptas quidem. Nulla suscipit obcaecati error facilis, quam accusamus fuga maxime possimus, iure aut molestiae, sit commodi excepturi aspernatur rem at blanditiis doloremque ipsa quaerat inventore ea? Amet quibusdam tempore explicabo ducimus velit.
+								<?php echo $infoSite['descricao'] ?>
 							</p>
 						</div>
 					</div>
@@ -82,12 +82,12 @@
 						<li class="cards_front_end_li col-11 col-sm-8 col-md-5 col-lg-4 marginTopBottom">
 							<div class="cards_front_end_content br10">
 								<div class="cards_front_end_capa br50">
-									<i class="fab fa-html5 cards_i"></i>
+									<i class="<?php echo $infoSite['icone1'] ?> cards_i"></i>
 								</div>
 								<div class="cards_front_end_conteudos">
 									<div class="cards_front_end_txts">
-										<div class="cards_front_end_titulo"><h2 class="cards_front_end_h2 hzmp">HTML5</h2></div>
-										<div class="cards_front_end_texto"><h3 class="cards_front_end_h3 hzmp">Linguagem de marcação, utilizada na web para inserção de conteúdos.</h3></div>
+										<div class="cards_front_end_titulo"><h2 class="cards_front_end_h2 hzmp"><?php echo $infoSite['titulo1'] ?></h2></div>
+										<div class="cards_front_end_texto"><h3 class="cards_front_end_h3 hzmp"><?php echo $infoSite['descricao1'] ?></h3></div>
 									</div>
 								</div>
 							</div>
@@ -96,12 +96,12 @@
 						<li class="cards_front_end_li col-11 col-sm-8 col-md-5 col-lg-4 marginTopBottom">
 							<div class="cards_front_end_content br10">
 								<div class="cards_front_end_capa br50">
-									<i class="fab fa-css3-alt cards_i"></i>
+									<i class="<?php echo $infoSite['icone2'] ?> cards_i"></i>
 								</div>
 								<div class="cards_front_end_conteudos">
 									<div class="cards_front_end_txts">
-										<div class="cards_front_end_titulo"><h2 class="cards_front_end_h2 hzmp">CSS3</h2></div>
-										<div class="cards_front_end_texto"><h3 class="cards_front_end_h3 hzmp">Utilizado para estilizar o site, desde cores e alinhamentos até efeitos de transição.</h3></div>
+										<div class="cards_front_end_titulo"><h2 class="cards_front_end_h2 hzmp"><?php echo $infoSite['titulo2'] ?></h2></div>
+										<div class="cards_front_end_texto"><h3 class="cards_front_end_h3 hzmp"><?php echo $infoSite['descricao2'] ?></h3></div>
 									</div>
 								</div>
 							</div>
@@ -110,12 +110,12 @@
 						<li class="cards_front_end_li col-11 col-sm-8 col-md-5 col-lg-4 marginTopBottom">
 							<div class="cards_front_end_content br10">
 								<div class="cards_front_end_capa br50">
-									<i class="fab fa-js-square cards_i"></i>
+									<i class="<?php echo $infoSite['icone3'] ?> cards_i"></i>
 								</div>
 								<div class="cards_front_end_conteudos">
 									<div class="cards_front_end_txts">
-										<div class="cards_front_end_titulo"><h2 class="cards_front_end_h2 hzmp">JavaScript</h2></div>
-										<div class="cards_front_end_texto"><h3 class="cards_front_end_h3 hzmp">Linguagem que permite implementar funções mais complexas em páginas web.</h3></div>
+										<div class="cards_front_end_titulo"><h2 class="cards_front_end_h2 hzmp"><?php echo $infoSite['titulo3'] ?></h2></div>
+										<div class="cards_front_end_texto"><h3 class="cards_front_end_h3 hzmp"><?php echo $infoSite['descricao3'] ?></h3></div>
 									</div>
 								</div>
 							</div>
@@ -145,12 +145,12 @@
 						<li class="cards_design_li col-11 col-sm-8 col-md-5 col-lg-4 marginTopBottom">
 							<div class="cards_design_content br10">
 								<div class="cards_design_capa br50">
-									<i class="fas fa-pen-fancy cards_i"></i>
+									<i class="<?php echo $infoSite['icone4'] ?> cards_i"></i>
 								</div>
 								<div class="cards_design_conteudos">
 									<div class="cards_design_txts">
-										<div class="cards_design_titulo"><h2 class="cards_design_h2 hzmp">Design Web</h2></div>
-										<div class="cards_design_texto"><h3 class="cards_design_h3 hzmp">Criação de interfaces para produtos digitais, sites, aplicativos e sistemas.</h3></div>
+										<div class="cards_design_titulo"><h2 class="cards_design_h2 hzmp"><?php echo $infoSite['titulo4'] ?></h2></div>
+										<div class="cards_design_texto"><h3 class="cards_design_h3 hzmp"><?php echo $infoSite['descricao4'] ?></h3></div>
 									</div>
 								</div>
 							</div>
@@ -159,12 +159,12 @@
 						<li class="cards_design_li col-11 col-sm-8 col-md-5 col-lg-4 marginTopBottom">
 							<div class="cards_design_content br10">
 								<div class="cards_design_capa br50">
-									<i class="fas fa-paint-brush cards_i"></i>
+									<i class="<?php echo $infoSite['icone5'] ?> cards_i"></i>
 								</div>
 								<div class="cards_design_conteudos">
 									<div class="cards_design_txts">
-										<div class="cards_design_titulo"><h2 class="cards_design_h2 hzmp">Design Gráfico</h2></div>
-										<div class="cards_design_texto"><h3 class="cards_design_h3 hzmp">Criação de artes para veículos de comunicação online e offline.</h3></div>
+										<div class="cards_design_titulo"><h2 class="cards_design_h2 hzmp"><?php echo $infoSite['titulo5'] ?></h2></div>
+										<div class="cards_design_texto"><h3 class="cards_design_h3 hzmp"><?php echo $infoSite['descricao5'] ?></h3></div>
 									</div>
 								</div>
 							</div>
@@ -173,12 +173,12 @@
 						<li class="cards_design_li col-11 col-sm-8 col-md-5 col-lg-4 marginTopBottom">
 							<div class="cards_design_content br10">
 								<div class="cards_design_capa br50">
-									<i class="fas fa-pencil-ruler cards_i"></i>
+									<i class="<?php echo $infoSite['icone6'] ?> cards_i"></i>
 								</div>
 								<div class="cards_design_conteudos">
 									<div class="cards_design_txts">
-										<div class="cards_design_titulo"><h2 class="cards_design_h2 hzmp">Marcas</h2></div>
-										<div class="cards_design_texto"><h3 class="cards_design_h3 hzmp">Criação de marcas exclusivas, branding e re-design.</h3></div>
+										<div class="cards_design_titulo"><h2 class="cards_design_h2 hzmp"><?php echo $infoSite['titulo6'] ?></h2></div>
+										<div class="cards_design_texto"><h3 class="cards_design_h3 hzmp"><?php echo $infoSite['descricao6'] ?></h3></div>
 									</div>
 								</div>
 							</div>

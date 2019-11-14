@@ -156,6 +156,8 @@ body{
 .fa-exclamation-triangle:before { content: "\f071"; }
 .fa-angle-up:before { content: "\f106"; }
 .fa-angle-down:before { content: "\f107"; }
+.fa-icon-html5:before { content: "\f13b"; }
+.fa-icon-css3:before { content: "\f13c"; }
 
 
 /* FONTE AWESOME --------------------------- */

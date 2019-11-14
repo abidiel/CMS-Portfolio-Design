@@ -141,14 +141,20 @@
         }
 
         // metodo para selecionar apenas 1 registro.
-        public static function select($table, $query, $arr){
-            $sql = MySql::conectar()->prepare("SELECT * FROM $table WHERE $query");
-            $sql->execute($arr);
+        public static function select($table, $query = '', $arr = ''){
+            if($query != false){
+                $sql = MySql::conectar()->prepare("SELECT * FROM $table WHERE $query");
+                $sql->execute($arr);
+            }else{
+                $sql = MySql::conectar()->prepare("SELECT * FROM $table");
+                $sql->execute();
+            }
+
             return $sql->fetch();
         }
 
-
-        public static function update($arr){
+        // o parametro single serve para rodar a funcao sem utilizar id
+        public static function update($arr,$single = false){
             $certo = true;
             $first = false;
             $nome_tabela = $arr['nome_tabela'];
@@ -181,9 +187,15 @@
 
             // concatenado o final do loop
             if($certo == true){
-                $parametros[] = $arr['id'];
-                $sql = MySql::conectar()->prepare($query.' WHERE id=?');
-                $sql->execute($parametros);
+                if($single == false){
+                    $parametros[] = $arr['id'];
+                    $sql = MySql::conectar()->prepare($query.' WHERE id=?');
+                    $sql->execute($parametros);
+                }else{
+                    $sql = MySql::conectar()->prepare($query);
+                    $sql->execute($parametros);                   
+                }
+
             }
             return $certo;
         }        

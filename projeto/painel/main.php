@@ -55,7 +55,7 @@
 				<div class="itens_menu ">
 					
 					<h2>Configuração geral</h2>
-					<a href="#">Editar</a></a>				
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-site">Editar</a></a>				
 
 					<h2>Usuários</h2>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar usuário</a>
@@ -68,8 +68,9 @@
 
 
 					<h2>Banners</h2>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-banner">Cadastrar banner</a>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-banners">Listar banner</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-banner">Cadastrar banner</a>
+					
 					
 									
 										

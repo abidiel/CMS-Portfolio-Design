@@ -48,7 +48,7 @@
             <tr>
                 <td><?php echo $value['nome']; ?></td>
                 <td><img class="thumb_painel" src="<?php echo INCLUDE_PATH_PAINEL?>assets/uploads/<?php echo $value['slide']; ?>"</td>
-                <td><a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-slides?id=<?php echo $value['id']; ?>" class="btn_ edit"><i class="fa fa-edit"></i> Editar</a></td>
+                <td><a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-banner?id=<?php echo $value['id']; ?>" class="btn_ edit"><i class="fa fa-edit"></i> Editar</a></td>
                 <td><a actionBtn="delete" href="<?php echo INCLUDE_PATH_PAINEL ?>listar-banners?excluir=<?php echo $value['id']; ?>" class="btn_ delete"><i class="fa fa-times"></i> Excluir</a></td>
                 <td><a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-banners?order=up&id=<?php echo $value['id']; ?>" class="btn order"><i class="fa fa-angle-up"></i></a></td>
                 <td><a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-banners?order=down&id=<?php echo $value['id']; ?>" class="btn order"><i class="fa fa-angle-down"></i></a></td>
