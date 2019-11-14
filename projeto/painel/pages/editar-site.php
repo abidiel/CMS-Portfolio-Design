@@ -33,7 +33,7 @@
         
         <div class="form_group">
             <label>Descricao:</label>
-           <input type="text" name="descricao" value="<?php echo $site['descricao'] ?>">
+           <textarea name="descricao"><?php echo $site['descricao'] ?></textarea>
         </div>
         
         <br>
@@ -42,23 +42,23 @@
             for($i = 1; $i <= 6; $i++){
         ?>
 
-        <h3>Skill <?php echo $i; ?>:</h3>
-        <div class="form_group">
-            <label>Icone:</label>
-           <input type="text" name="icone<?php echo $i; ?>" value="<?php echo $site['icone'.$i] ?>">
-        </div>
+            <h3>Skill <?php echo $i; ?>:</h3>
+            <div class="form_group">
+                <label>Icone:</label>
+            <input type="text" name="icone<?php echo $i; ?>" value="<?php echo $site['icone'.$i] ?>">
+            </div>
 
-        <div class="form_group">
-            <label>Titulo:</label>
-           <input type="text" name="titulo<?php echo $i; ?>" value="<?php echo $site['titulo'.$i] ?>">
-        </div>
+            <div class="form_group">
+                <label>Titulo:</label>
+            <input type="text" name="titulo<?php echo $i; ?>" value="<?php echo $site['titulo'.$i] ?>">
+            </div>
 
-        <div class="form_group">
-            <label>Descrição:</label>
-           <input type="text" name="descricao<?php echo $i; ?>" value="<?php echo $site['descricao'.$i] ?>">
-        </div>
+            <div class="form_group">
+                <label>Descrição:</label>
+            <input type="text" name="descricao<?php echo $i; ?>" value="<?php echo $site['descricao'.$i] ?>">
+            </div>
 
-        <br>
+            <br>
 
         <?php 
         }
