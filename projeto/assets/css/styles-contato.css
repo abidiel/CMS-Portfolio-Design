@@ -1,0 +1,135 @@
+.sessao_contatos {
+  padding-top: 67px !important;
+  background-color: #fff;
+  color: #757575;
+}
+.contatos_ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.contatos_li {
+  min-height: 320px;
+}
+.box_contatos {
+  min-height: 305px;
+}
+.titulo_contatos {
+  margin-bottom: 15px;
+}
+.contatos_h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.contatos_telefones {
+  padding-top: 50px;
+}
+.contatos_telefones_li {
+  padding: 5px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contatos_telefones_img {
+  flex-basis: 18px;
+  margin-right: 10px;
+}
+.contatos_telefones_h4 {
+  flex-basis: calc(100% - 28px);
+  font-size: 1rem;
+  font-weight: 300;
+}
+.contatos_redessociais {
+  margin-top: 30px;
+}
+.contatos_redessociais_li {
+  display: inline-block;
+  margin-right: 6px;
+}
+.contatos_redessociais_li:last-child {
+  margin-right: 0;
+}
+.contatos_redessociais_img {
+  width: 32px;
+  height: 32px;
+}
+.contatos_endereco {
+  padding-top: 50px;
+}
+.contatos_endereco_h4 {
+  padding: 5px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.contatos_email {
+  margin-top: 30px;
+}
+.contatos_email_h4 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.form_contato_li {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.form_contato_li:first-child {
+  margin-top: 0;
+}
+.form_contato_li:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.form_campo_contato,
+.form_texto_contato {
+  border: solid 1px #757575;
+}
+.form_texto_contato {
+  max-height: 100px;
+}
+.form_botao_contato {
+  width: 100%;
+  padding: 10px 15px;
+}
+.btn_layout {
+  background-color: #000;
+  border: solid 1px #ce0f0f;
+  color: #fff;
+}
+.btn_layout:hover {
+  background-color: #ce0f0f;
+  border: solid 1px #000;
+  color: #fff;
+}
+
+/**/
+/* CSS RESPONSIVO */
+/**/
+
+@media (max-width: 575.98px) {
+  .contato-desktop {
+    display: none;
+  }
+  .sessao_contatos {
+    padding-top: 67px;
+  }
+  .box_contatos,
+  .contatos_li {
+    min-height: inherit;
+  }
+  .contatos_telefones {
+    padding-top: 25px;
+  }
+  .contatos_endereco {
+    padding-top: 0;
+  }
+  .contatos_redessociais {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .contatos_email {
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+}
