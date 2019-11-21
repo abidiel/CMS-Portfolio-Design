@@ -84,6 +84,7 @@ $(function () {
 	// Shake form error
 
 
-	
+	//utilizando o jquery.mask
+	$('[formato=tel]').mask('(99) 99999-9999');
 
 });

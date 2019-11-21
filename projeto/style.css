@@ -377,6 +377,45 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 .copyright_a { display: flex; flex-wrap: nowrap; align-items: center; color: #fff; }
 .copyright_img { margin-right: 6px; }
 
+
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+/* PÁGINA CONTATO */
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.sessao_contato { background-color: #f8f8f8; color: #757575; }
+
+.contato_ul { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+
+.form_contato { width: 100%; margin: 0px auto; max-width: 442px; }
+.form_contato_li { margin-top: 15px; margin-bottom: 15px; }
+
+form input[type=submit]{
+	width: 100px;
+	height: 40px;
+	cursor: pointer;
+	margin-top: 10px;
+	font-size: 16px;
+	background: #ac0000;
+	color: white;
+	border-radius: 25px;
+}
+
+
+.form_campo_contato { background-color: #fff; border: solid 1px #eee; color: #666; }
+
+/* Sessão Cards Contato */
+.sessao_cards_contato { background-color: #fff; color: #757575; }
+.cards_contato_content { width: 100%; margin: 0px auto; padding: 15px; text-align: center; box-shadow: 0 0 11px rgba(33,33,33,.2); }
+.cards_contato_content:hover {  box-shadow: 0 0 11px rgba(33,33,33,.4); }
+.cards_contato_capa { margin-top: 20px; display: flex; justify-content: center; }
+.contato_i:before{color: #ac0000; font-size: 40px; width: 80px; height: 80px; display: flex; justify-content: center; align-items: center; background-color: transparent; border: solid 2px #ac0000; border-radius: 50px;}
+.cards_contato_txts { padding: 15px; }
+.cards_contato_titulo { margin-top: 10px; margin-bottom: 10px; }
+.cards_contato_h2 { font-size: 1.25rem; font-weight: 800; }
+.cards_contato_li a:visited{text-decoration: none; color:#757575}
+
+
+
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 /* CSS RESPONSIVO */
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -406,10 +445,11 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 
 /* Até 575.98px */
 @media (max-width: 575.98px) {
+  /* Sessão Cards Contato */
+  .cards_contato_content { max-width: 280px; }
 
-
-.lista_banner_capa { overflow: hidden; }
-.lista_banner_img { max-width: 600px; }
+  .lista_banner_capa { overflow: hidden; }
+  .lista_banner_img { max-width: 600px; }
 
 }
 

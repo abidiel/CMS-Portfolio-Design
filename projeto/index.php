@@ -15,6 +15,7 @@
 		<meta name="description" content="" />
 
 		<title><?php echo $infoSite['titulo']; ?></title>
+		<link rel="icon" href="<?php echo INCLUDE_PATH; ?>assets/images/favicon.png" />
 
 		<!-- css -->
 		<link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>style.css" />
@@ -40,9 +41,9 @@
 							<li class="cabecalho_li">
 								
 								<div class="logo">
-									<a class="logo_a" title="John's Portfólio" href="index.html">
+									<a class="logo_a" title="John's Portfólio" href="<?php echo INCLUDE_PATH; ?>">
 										<h1 class="logo_h1 hdno hfz0 hzmp">John's Portfólio</h1>
-										<img src="http://dummyimage.com/200x60/333333/333333.gif" alt="John's Portfólio" title="John's Portfólio" class="logo_img img-fluid" />
+										<img src="<?php echo INCLUDE_PATH; ?>assets/images/logo.png" alt="John's Portfólio" title="John's Portfólio" class="logo_img img-fluid" />
 									</a>
 								</div>
 
@@ -64,12 +65,12 @@
 											<li class="menu_li"><a class="menu_a" title="Portfólio" href="list-portfolio">Portfólio</a></li>
 											<li class="menu_li"><a class="menu_a" title="Contato" href="contato">Contato</a></li>
 											<li class="redes_sociais_li">
-												<a class="redes_sociais_a br50 transitions5" title="" target="_blank" href="#">
+												<a class="redes_sociais_a br50 transitions5" title="Acesse meu Facebook" target="_blank" href="<?php echo $infoSite['facebook']; ?>">
 													<i class="fab fa-facebook-f redes_sociais_i"></i>
 												</a>
 											</li>
 											<li class="redes_sociais_li">
-												<a class="redes_sociais_a br50 transitions5" title="" target="_blank" href="#">
+												<a class="redes_sociais_a br50 transitions5" title="Acesse meu Instagram" target="_blank" href="<?php echo $infoSite['instagram']; ?>">
 													<i class="fab fa-instagram redes_sociais_i"></i>
 												</a>
 											</li>
@@ -122,8 +123,8 @@
 										<div class="rodape_content">
 											<div class="logo_rodape">
 												<div class="logo_rodape_capa">
-													<a class="logo_rodape_a" title="John's Portfólio" href="#topo">
-														<img src="http://dummyimage.com/180x60/333333/333333.gif" alt="" title="" class="logo_rodape_img img-fluid" />
+													<a class="logo_rodape_a" title="John's Portfólio" href="<?php echo INCLUDE_PATH; ?>">
+														<img src="<?php echo INCLUDE_PATH; ?>assets/images/logo.png" alt="" title="" class="logo_rodape_img img-fluid" />
 													</a>
 												</div>
 											</div>
@@ -158,6 +159,7 @@
 
 		<!-- jQuery / JS / scripts -->
 		<script src="<?php echo INCLUDE_PATH; ?>assets/js/jquery.min.js"></script>
+		<script src="<?php echo INCLUDE_PATH_PAINEL; ?>assets/js/jquery.mask.js"></script>
 		<script src="<?php echo INCLUDE_PATH; ?>assets/js/scripts.js"></script>
 		<script src="<?php echo INCLUDE_PATH; ?>assets/libs/slick/slick.min.js"></script>
 		<!-- jQuery / JS / scripts -->

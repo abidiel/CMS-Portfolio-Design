@@ -20,7 +20,7 @@
             }
         ?>
 
-        <!-- Os valores do value de cada campo são dinamicos, trazidos do banco. -->
+        <h3>Informações gerais:</h3>
         <div class="form_group">
             <label>Título do site:</label>
            <input type="text" name="titulo" value="<?php echo $site['titulo'] ?>">
@@ -37,6 +37,17 @@
         </div>
         
         <br>
+
+        <h3>Redes sociais:</h3>
+        <div class="form_group">
+            <label>Instagram:</label>
+           <input type="text" name="instagram" value="<?php echo $site['instagram'] ?>">
+        </div>
+
+        <div class="form_group">
+            <label>Facebook:</label>
+           <input type="text" name="facebook" value="<?php echo $site['facebook'] ?>">
+        </div>
 
         <?php 
             for($i = 1; $i <= 6; $i++){

@@ -55,7 +55,16 @@
 				<div class="itens_menu ">
 					
 					<h2>Configuração geral</h2>
+					<a href="<?php echo INCLUDE_PATH ?>" target="_blank">Ver site</a></a>				
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-site">Editar</a></a>				
+
+					<h2>Portfolio</h2>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-portfolio">Listar posts</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-portfolio">Cadastrar posts</a>
+
+					<h2>Portfolio categorias</h2>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-categorias">Listar categorias</a>	
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-categorias">Cadastrar categorias</a>
 
 					<h2>Usuários</h2>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar usuário</a>
@@ -66,15 +75,10 @@
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar depoimentos</a>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimentos">Cadastrar depoimentos</a>
 
-
 					<h2>Banners</h2>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-banners">Listar banner</a>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-banner">Cadastrar banner</a>
-					
-					
-									
-										
-					
+				
 				</div>
 
             </div>
