@@ -33,7 +33,7 @@
                             Painel::deleteFile($imagem_atual);
                             $imagem = Painel::uploadFile($imagem);
                             $slug = Painel::generateSlug($nome);
-                            $arr = ['titulo' => $nome,'categoria_id' => $_POST['categoria_id'],'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,'id'=> $id,'nome_tabela'=>'tb_site_portfolio'];
+                            $arr = ['titulo' => $nome,'data'=>date('Y-m-d'),'categoria_id' => $_POST['categoria_id'],'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,'id'=> $id,'nome_tabela'=>'tb_site_portfolio'];
                             Painel::update($arr);
                             $portfolio = Painel::select('tb_site_portfolio','id = ?', array($id));
                             Painel::alerta('sucesso','O item do portfolio foi editado com sucesso (junto com a imagem)!'); 
@@ -45,7 +45,7 @@
                     }else{
                         $imagem = $imagem_atual;    
                         $slug = Painel::generateSlug($nome);   
-                        $arr = ['titulo' => $nome,'categoria_id' => $_POST['categoria_id'],'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,'id'=> $id,'nome_tabela'=>'tb_site_portfolio'];
+                        $arr = ['titulo' => $nome,'data'=>date('Y-m-d'),'categoria_id' => $_POST['categoria_id'],'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,'id'=> $id,'nome_tabela'=>'tb_site_portfolio'];
                         Painel::update($arr);    
                         $portfolio = Painel::select('tb_site_portfolio','id = ?', array($id));
                         Painel::alerta('sucesso','O item do portfolio foi editado com sucesso (sem imagem)!');                
@@ -67,7 +67,7 @@
 
         <div class="form_group">
             <label>Conteudo:</label>
-            <textarea name="conteudo"><?php echo $portfolio['conteudo']; ?></textarea>
+            <textarea class="tinymce" name="conteudo"><?php echo $portfolio['conteudo']; ?></textarea>
         </div>
 
         <div class="form_group">

@@ -61,9 +61,9 @@
 
 									<nav class="menu">
 										<ul class="menu_ul hzmp">
-											<li class="menu_li"><a class="menu_a" title="Home" href="home">Home</a></li>
-											<li class="menu_li"><a class="menu_a" title="Portfólio" href="list-portfolio">Portfólio</a></li>
-											<li class="menu_li"><a class="menu_a" title="Contato" href="contato">Contato</a></li>
+											<li class="menu_li"><a class="menu_a" title="Home" href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
+											<li class="menu_li"><a class="menu_a" title="Portfólio" href="<?php echo INCLUDE_PATH; ?>portfolio">Portfólio</a></li>
+											<li class="menu_li"><a class="menu_a" title="Contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
 											<li class="redes_sociais_li">
 												<a class="redes_sociais_a br50 transitions5" title="Acesse meu Facebook" target="_blank" href="<?php echo $infoSite['facebook']; ?>">
 													<i class="fab fa-facebook-f redes_sociais_i"></i>
@@ -100,7 +100,18 @@
 					if(file_exists('pages/'.$url.'.php')){
 						include('pages/'.$url.'.php');
 					}else{
-						include('pages/404.php');
+						if($url != 'portfolio' && $url != 'contato'){
+							$urlPar = explode('/',$url)[0];
+							if($urlPar != 'portfolio'){
+								include('pages/404.php');
+							}else{
+								include('pages/portfolio.php');
+							}
+							
+						}else{
+							include('pages/home.php');
+						}
+						
 					}
 				?>
 

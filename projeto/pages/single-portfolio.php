@@ -1,4 +1,6 @@
-
+<?php
+	$url = explode('/',$_GET['url']);
+?>
 			<!-- main site ( conteúdos do site ) -->
 			<main class="main_site">
 				
@@ -6,35 +8,30 @@
 				<section class="sessao_do_site sessao_banner home">
 					<div class="lista_sessao">
 						
-						<div class="lista_banner">
+
+					<div class="lista_banner">
 							<ul class="lista_banner_ul hzmp">
 
-								<li class="lista_banner_li">
-									<div class="lista_banner_content">
-										<div class="lista_banner_capa">
-											<img src="assets/images/banner_home01.jpg" alt="" title="" class="lista_banner_img img-fluid" />
-										</div>
-									</div>
-								</li>
+							<?php
+									$sql = MySql::conectar()->prepare("SELECT * FROM tb_site_slides ORDER BY order_id ASC LIMIT 3");
+									$sql->execute();
+									$slides = $sql->fetchAll();
+									foreach ($slides as $key => $value){
+								?>
+
 
 								<li class="lista_banner_li">
 									<div class="lista_banner_content">
 										<div class="lista_banner_capa">
-											<img src="assets/images/banner_home01.jpg" alt="" title="" class="lista_banner_img img-fluid" />
+											<img src="<?php echo INCLUDE_PATH_PAINEL?>assets/uploads/<?php echo $value['slide']; ?>" alt="" title="" class="lista_banner_img img-fluid" />
 										</div>
 									</div>
 								</li>
 
-								<li class="lista_banner_li">
-									<div class="lista_banner_content">
-										<div class="lista_banner_capa">
-											<img src="assets/images/banner_home01.jpg" alt="" title="" class="lista_banner_img img-fluid" />
-										</div>
-									</div>
-								</li>
+							<?php } ?>
 
 							</ul>
-						</div>
+						</div>	
 
 					</div>
 				</section>
@@ -75,7 +72,7 @@
 																	</div>
 																	<div class="lista_portfolio_texto">
 																		<p class="lista_portfolio_p">
-																			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore corporis tenetur, tempore suscipit. Cum, unde voluptatem obcaecati, culpa doloremque est iusto qui mollitia iste ducimus, quo. Dicta necessitatibus ut iure cum illum dolor, adipisci voluptatem placeat, esse fuga. Incidunt, laudantium temporibus ipsa autem expedita saepe molestiae dolorum
+																			TESTELorem ipsum dolor sit amet, consectetur adipisicing elit. Labore corporis tenetur, tempore suscipit. Cum, unde voluptatem obcaecati, culpa doloremque est iusto qui mollitia iste ducimus, quo. Dicta necessitatibus ut iure cum illum dolor, adipisci voluptatem placeat, esse fuga. Incidunt, laudantium temporibus ipsa autem expedita saepe molestiae dolorum
 																		</p>
 																		<p class="lista_portfolio_p">
 																				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore corporis tenetur, tempore suscipit. Cum, unde voluptatem obcaecati, culpa doloremque est iusto qui mollitia iste ducimus, quo. Dicta necessitatibus ut iure cum illum dolor, adipisci voluptatem placeat, esse fuga. Incidunt, laudantium temporibus ipsa autem expedita saepe molestiae dolorum

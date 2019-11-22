@@ -290,6 +290,7 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* Página portfolio ( Listagem ) */
+.lista_portfolio{margin-top: -20px;}
 .lista_portfolio_article { margin-bottom: 30px; }
 .lista_portfolio_texto{margin-bottom: 15px}
 .lista_portfolio_article:last-child { margin-bottom: 0px; }

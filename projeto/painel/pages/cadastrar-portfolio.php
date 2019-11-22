@@ -24,7 +24,7 @@
                         if($verifica->rowCount() == 0 ){
                             $imagem = Painel::uploadFile($capa);
                             $slug = Painel::generateSlug($titulo);
-                            $arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,'order_id'=>'0','nome_tabela'=>'tb_site_portfolio'];
+                            $arr = ['categoria_id'=>$categoria_id,'data'=>date('Y-m-d'),'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,'order_id'=>'0','nome_tabela'=>'tb_site_portfolio'];
                             if(Painel::insert($arr)){
                                 Painel::redirect(INCLUDE_PATH_PAINEL.'cadastrar-portfolio?sucesso');
                             }
@@ -39,8 +39,8 @@
                 
 
             }
-            if(isset($_GET['sucesso'])){
-                Painel::alert('sucesso','Cadastro realizado com sucesso');
+            if(isset($_GET['sucesso']) && !isset($_POST['acao'])){
+                Painel::alerta('sucesso','Cadastro realizado com sucesso');
             }
         ?>
 
@@ -68,7 +68,7 @@
  
         <div class="form_group">
             <label>Conteúdo:</label>
-            <textarea type="text" name="conteudo"  value=""> <?php recoverPost('conteudo'); ?> </textarea>
+            <textarea class="tinymce" name="conteudo"  value=""> <?php recoverPost('conteudo'); ?> </textarea>
         </div>
 
         <div class="form_group">

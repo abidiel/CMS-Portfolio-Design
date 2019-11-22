@@ -109,6 +109,47 @@
 		<script src="<?php echo INCLUDE_PATH; ?>assets/js/jquery.min.js"></script>
 		<script src="<?php echo INCLUDE_PATH_PAINEL; ?>assets/js/jquery.mask.js"></script>
 		<script src="<?php echo INCLUDE_PATH_PAINEL; ?>assets/js/scripts.js"></script>
+		<script src="https://cdn.tiny.cloud/1/t81h8bda50fcocta3j6jged8p5vds2jfnur80ozfawc57qkt/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+		<script>
+      tinymce.init({
+        selector: ".tinymce",
+        height: 400,
+        plugins: "code image",
+        toolbar: "undo redo | image | styleselect | bold italic | alignleft aligncenter alignright alignjustify  | fontsizeselect  | code  ",
+		images_upload_url: "assets/tinymce/upload.php",
+        images_upload_handler: function(blobInfo, success, failure) {
+          var xhr, formData;
+
+          xhr = new XMLHttpRequest();
+          xhr.withCredentials = false;
+          xhr.open("POST", "assets/tinymce/upload.php");
+
+          xhr.onload = function() {
+            var json;
+
+            if (xhr.status != 200) {
+              failure("HTTP Error: " + xhr.status);
+              return;
+            }
+
+            json = JSON.parse(xhr.responseText);
+
+            if (!json || typeof json.location != "string") {
+              failure("invalid JSON: " + xhr.responseText);
+              return;
+            }
+
+            success(json.location);
+          };
+
+          formData = new FormData();
+          formData.append("file", blobInfo.blob(), blobInfo.filename());
+
+          xhr.send(formData);
+        }
+      });
+    </script>
 		<!-- jQuery / JS / scripts 
 		
 	</body>

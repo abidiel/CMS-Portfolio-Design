@@ -1,39 +1,39 @@
+<?php
+	$url = explode('/',$_GET['url']);
+	if(!isset($url[2])){
+?>
+
 			<!-- main site ( conteúdos do site ) -->
 			<main class="main_site">
 				
 				<!-- sessão banner -->
 				<section class="sessao_do_site sessao_banner home">
 					<div class="lista_sessao">
-						
+
+
 						<div class="lista_banner">
 							<ul class="lista_banner_ul hzmp">
 
-								<li class="lista_banner_li">
-									<div class="lista_banner_content">
-										<div class="lista_banner_capa">
-											<img src="assets/images/banner_home01.jpg" alt="" title="" class="lista_banner_img img-fluid" />
-										</div>
-									</div>
-								</li>
+							<?php
+									$sql = MySql::conectar()->prepare("SELECT * FROM tb_site_slides ORDER BY order_id ASC LIMIT 3");
+									$sql->execute();
+									$slides = $sql->fetchAll();
+									foreach ($slides as $key => $value){
+								?>
+
 
 								<li class="lista_banner_li">
 									<div class="lista_banner_content">
 										<div class="lista_banner_capa">
-											<img src="assets/images/banner_home01.jpg" alt="" title="" class="lista_banner_img img-fluid" />
+											<img src="<?php echo INCLUDE_PATH_PAINEL?>assets/uploads/<?php echo $value['slide']; ?>" alt="" title="" class="lista_banner_img img-fluid" />
 										</div>
 									</div>
 								</li>
 
-								<li class="lista_banner_li">
-									<div class="lista_banner_content">
-										<div class="lista_banner_capa">
-											<img src="assets/images/banner_home01.jpg" alt="" title="" class="lista_banner_img img-fluid" />
-										</div>
-									</div>
-								</li>
+							<?php } ?>
 
 							</ul>
-						</div>
+						</div>						
 
 					</div>
 				</section>
@@ -77,7 +77,7 @@
 																			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore corporis tenetur, tempore suscipit. Cum, unde voluptatem obcaecati, culpa doloremque est iusto qui mollitia iste ducimus, quo. Dicta necessitatibus ut iure cum illum dolor, adipisci voluptatem placeat, esse fuga. Incidunt, laudantium temporibus ipsa autem expedita saepe molestiae dolorum
 																		</p>
 																		<button class="lista_portfolio_btn transitions3" title="">
-																			<a href="single-portfolio">Ver mais</a>
+																			<a href="<?php echo INCLUDE_PATH; ?>portfolio/esportes/nome-do-post">Ver mais</a>
 																		</button>
 																	</div>
 																		
@@ -174,9 +174,20 @@
 											<div class="acordeon">
 												<div class="titulo_sidebar"><span>Categorias</span><i class="fas fa-caret-down icone_acordeon"></i></div>
 												<ul>
-													<li><a title="" href=""><i class="fas fa-angle-right acordeon_item_i"></i><span class="acorderon_item_span">Categoria 01</span></a></li>
-													<li><a title="" href=""><i class="fas fa-angle-right acordeon_item_i"></i><span class="acorderon_item_span">Categoria 02</span></a></li>
-													<li><a title="" href=""><i class="fas fa-angle-right acordeon_item_i"></i><span class="acorderon_item_span">Categoria 03</span></a></li>
+													<?php
+														$categorias = MySql::conectar()->prepare("SELECT * FROM tb_site_categorias ORDER BY order_id ASC");
+														$categorias->execute();
+														$categorias = $categorias->fetchAll();
+														foreach($categorias as $key => $value){
+															// vou precisar para o link: echo $value['slug'];
+															?>
+
+															<li><a title="" href=""><i class="fas fa-angle-right acordeon_item_i"></i><span class="acorderon_item_span"><?php echo $value['nome']; ?></span></a></li>
+														
+														<?php 
+														}
+													?>													
+													
 												</ul>
 											</div>
 	
@@ -204,3 +215,9 @@
 			
 			</main>
 			<!-- main site ( conteúdos do site ) -->
+
+			<?php }else{ 
+	include('single-portfolio.php');
+}
+?>			
+			

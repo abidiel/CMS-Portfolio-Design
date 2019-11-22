@@ -49,6 +49,8 @@
            <input type="text" name="facebook" value="<?php echo $site['facebook'] ?>">
         </div>
 
+        <br>
+        
         <?php 
             for($i = 1; $i <= 6; $i++){
         ?>

@@ -14,7 +14,7 @@
     // o int antes do get é p transformar em inteiro
     $paginaAtual = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
     $porPagina = 4;
-    $usuarios = Painel::selectAll('tb_admin_usuarios',($paginaAtual - 1) * $porPagina,$porPagina);
+    $usuarios = Painel::selectAllWithoutOrder('tb_admin_usuarios',($paginaAtual - 1) * $porPagina,$porPagina);
     
 ?>
 
@@ -47,7 +47,7 @@
     <div class="paginacao">
         <?php
             // ceil arredonda os números.
-            $totalPaginas = ceil(count(Painel::selectAll('tb_admin_usuarios')) / $porPagina);
+            $totalPaginas = ceil(count(Painel::selectAllWithoutOrder('tb_admin_usuarios')) / $porPagina);
 
             for($i = 1; $i <= $totalPaginas; $i++){
                 if ($i == $paginaAtual){

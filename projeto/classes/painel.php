@@ -123,6 +123,17 @@
             return $sql->fetchAll();
         }
 
+        public static function selectAllWithoutOrder($tabela,$start = null, $end = null){
+            if($start == null && $end == null){
+                $sql = MySql::conectar()->prepare("SELECT * FROM $tabela ");
+            }else{
+                // $sql = MySql::conectar()->prepare("SELECT * FROM $tabela  ASC LIMIT $start,$end");
+                $sql = MySql::conectar()->prepare("SELECT * FROM $tabela ");
+            }
+            $sql->execute();
+            return $sql->fetchAll();
+        }        
+
         public static function deletar($tabela,$id=false){
             if($id == false){
                 $sql = MySql::conectar()->prepare("DELETE FROM $tabela");
