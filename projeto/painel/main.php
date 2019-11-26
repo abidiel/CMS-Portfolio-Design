@@ -68,6 +68,7 @@
 
 					<h2>Banners</h2>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-banners">Listar banner</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-banner">Cadastrar banner</a>
 					
 					<h2>Depoimentos</h2>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar depoimentos</a>
