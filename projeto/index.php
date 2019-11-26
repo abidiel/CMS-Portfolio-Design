@@ -27,6 +27,9 @@
 
 	<body>
 
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
+
 		<!-- container site -->
 		<div class="container_site">
 
@@ -174,6 +177,9 @@
 		<script src="<?php echo INCLUDE_PATH; ?>assets/js/scripts.js"></script>
 		<script src="<?php echo INCLUDE_PATH; ?>assets/libs/slick/slick.min.js"></script>
 		<!-- jQuery / JS / scripts -->
+
+		<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0"></script>
 		
 	</body>
 

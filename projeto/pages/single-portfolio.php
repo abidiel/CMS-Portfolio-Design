@@ -94,6 +94,9 @@
 																			<header class="header_article"><h3 class="lista_portfolio_h3 transitions5 hzmp"><?php echo $post['titulo']; ?></h3></header>
 																		</a>
 																	</div>
+
+																	<img src="<?php echo INCLUDE_PATH_PAINEL?>assets/uploads/<?php echo $post['capa']; ?>" alt="" title="" class="lista_portfolio_img img-fluid br10">
+
 																	<div class="lista_portfolio_texto">
 																		<p class="lista_portfolio_p">
 																			<?php echo $post['conteudo']; ?>
@@ -131,7 +134,10 @@
 											<!-- / compartilhar -->
 
 											<!-- plugin de comentários -->
-											<div class="comentarios"><p class="comentarios_p hzmp">plugin de comentários aqui</p></div>
+											<div class="fb-comments" data-href="http://localhost/portfolio/CMS-Portfolio-Design/projeto" data-width="" data-numposts="5"></div>
+
+
+											
 											<!-- / plugin de comentários -->
 
 											
