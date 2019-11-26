@@ -13,7 +13,7 @@
 		<meta name="description" content="" />
 
 		<title>Painel de controle</title>
-
+		<link rel="icon" href="<?php echo INCLUDE_PATH; ?>assets/images/favicon.png" />
 		<!-- css -->
 		<link rel="stylesheet" href="<?php echo INCLUDE_PATH_PAINEL; ?>assets/css/styles.css" />
 		<!-- <link rel="stylesheet" href="<?php echo INCLUDE_PATH_PAINEL; ?>assets/css/bootstrap-grid.min.css" /> -->
@@ -66,18 +66,17 @@
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-categorias">Listar categorias</a>	
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-categorias">Cadastrar categorias</a>
 
-					<h2>Usuários</h2>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar usuário</a>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-usuarios">Listar usuários</a>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar usuários</a>	
-
+					<h2>Banners</h2>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-banners">Listar banner</a>
+					
 					<h2>Depoimentos</h2>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-depoimentos">Listar depoimentos</a>
 					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-depoimentos">Cadastrar depoimentos</a>
 
-					<h2>Banners</h2>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-banners">Listar banner</a>
-					<a href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-banner">Cadastrar banner</a>
+					<h2>Usuários</h2>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar usuário</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>listar-usuarios">Listar usuários</a>
+					<a href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar usuários</a>	
 				
 				</div>
 
@@ -112,44 +111,44 @@
 		<script src="https://cdn.tiny.cloud/1/t81h8bda50fcocta3j6jged8p5vds2jfnur80ozfawc57qkt/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
 		<script>
-      tinymce.init({
-        selector: ".tinymce",
-        height: 400,
-        plugins: "code image",
-        toolbar: "undo redo | image | styleselect | bold italic | alignleft aligncenter alignright alignjustify  | fontsizeselect  | code  ",
-		images_upload_url: "assets/tinymce/upload.php",
-        images_upload_handler: function(blobInfo, success, failure) {
-          var xhr, formData;
+			tinymce.init({
+				selector: ".tinymce",
+				height: 400,
+				plugins: "code image",
+				toolbar: "undo redo | image | styleselect | bold italic | alignleft aligncenter alignright alignjustify  | fontsizeselect  | code  ",
+				images_upload_url: "assets/tinymce/upload.php",
+				images_upload_handler: function(blobInfo, success, failure) {
+				var xhr, formData;
 
-          xhr = new XMLHttpRequest();
-          xhr.withCredentials = false;
-          xhr.open("POST", "assets/tinymce/upload.php");
+				xhr = new XMLHttpRequest();
+				xhr.withCredentials = false;
+				xhr.open("POST", "assets/tinymce/upload.php");
 
-          xhr.onload = function() {
-            var json;
+				xhr.onload = function() {
+					var json;
 
-            if (xhr.status != 200) {
-              failure("HTTP Error: " + xhr.status);
-              return;
-            }
+					if (xhr.status != 200) {
+					failure("HTTP Error: " + xhr.status);
+					return;
+					}
 
-            json = JSON.parse(xhr.responseText);
+					json = JSON.parse(xhr.responseText);
 
-            if (!json || typeof json.location != "string") {
-              failure("invalid JSON: " + xhr.responseText);
-              return;
-            }
+					if (!json || typeof json.location != "string") {
+					failure("invalid JSON: " + xhr.responseText);
+					return;
+					}
 
-            success(json.location);
-          };
+					success(json.location);
+				};
 
-          formData = new FormData();
-          formData.append("file", blobInfo.blob(), blobInfo.filename());
+				formData = new FormData();
+				formData.append("file", blobInfo.blob(), blobInfo.filename());
 
-          xhr.send(formData);
-        }
-      });
-    </script>
+				xhr.send(formData);
+				}
+			});
+ 	   </script>
 		<!-- jQuery / JS / scripts 
 		
 	</body>

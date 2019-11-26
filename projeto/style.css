@@ -305,6 +305,9 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 .lista_portfolio_btn { background-color: #ac0000; padding: 12px 24px 12px 24px; border-radius: 10px; color: #fff;}
 .lista_portfolio_btn a{ color: #fff;}
 .lista_portfolio_btn:hover { background-color: #770e02;}
+.lista_portfolio_titulo_pagina{padding: 0px 0px 0px 15px; margin: 0px 0px 20px 0px;}
+.lista_portfolio_titulo_pagina h2{font-size: 1.5rem}
+.lista_portfolio_titulo_pagina a{text-decoration: underline; color: #AC0000}
 
 /* Página portfolio ( Single ) */
 .lista_portfolio_texto img{border-radius: 10px; box-shadow: 0 0 11px rgba(33,33,33,.1); margin: 0px 0px 20px 0px;}

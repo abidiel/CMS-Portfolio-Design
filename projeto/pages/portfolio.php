@@ -1,6 +1,12 @@
 <?php
 	$url = explode('/',$_GET['url']);
 	if(!isset($url[2])){
+
+	$categoria = MySql::conectar()->prepare("SELECT * FROM tb_site_categorias WHERE slug = ?");
+	$categoria->execute(array(@$url[1]));
+	$categoria = $categoria->fetch();
+
+	
 ?>
 
 			<!-- main site ( conteúdos do site ) -->
@@ -44,40 +50,99 @@
 							
 							<div class="lista_sessao">
 								
+								<div class="lista_portfolio_titulo_pagina ">
+									<?php
+										$porPagina = 2;
+										if($categoria['nome'] == ''){ ?>
+											<h2>Visualizando todos os posts </h2>
+										<?php 
+										}else{ ?>
+											<h2>Visualizando os posts em: <a href="<?php echo INCLUDE_PATH?>portfolio/<?php echo $categoria['slug']; ?>"><?php echo $categoria['nome']; ?></a></h2>
+										<?php }; 
+
+										$query = "SELECT * FROM tb_site_portfolio ";
+										if($categoria['nome'] != ''){
+											$categoria['id'] = (int)$categoria['id'];
+											 $query.="WHERE categoria_id = $categoria[id]";
+										}
+
+										
+										$query2 = "SELECT * FROM tb_site_portfolio";
+										if($categoria['nome'] != ''){
+											$categoria['id'] = (int)$categoria['id'];
+											$query2.=" WHERE categoria_id = $categoria[id]";
+										}
+										$totalPaginas = MySql::conectar()->prepare($query2);
+										$totalPaginas->execute();
+										$totalPaginas = ceil($totalPaginas->rowCount() / $porPagina);
+																			
+
+										if(isset($_GET['pagina'])){
+											$pagina = (int)$_GET['pagina'];
+											if($pagina > $totalPaginas){
+												$pagina = 1;
+											}
+											
+											$queryPg = ($pagina - 1) * $porPagina;
+											$query.=" ORDER BY order_id ASC LIMIT $queryPg,$porPagina";
+										}else{
+											$pagina = 1;
+											$query.=" ORDER BY order_id ASC LIMIT 0,$porPagina";
+										}									
+
+										$sql = MySql::conectar()->prepare($query);
+										$sql->execute();
+										$portfolio = $sql->fetchAll();
+
+										//Define informações locais 
+										setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+										date_default_timezone_set('America/Sao_Paulo');
+										?>
+								</div>
+							
 								<!-- content sidebar -->
 								<div class="content_sidebar">
 									<ul class="content_sidebar_ul row justify-content-center hzmp">
 										
+										
 										<!-- content internas -->
 										<div class="content_internas col-12 col-lg-9 marginTopBottom">
+											
 											
 											<!-- lista portfolio -->
 											<div class="lista_portfolio">
 												<div class="lista_portfolio_articles hzmp">
+
+													<?php
+														foreach($portfolio as $key=>$value){
+														$sql = MySql::conectar()->prepare("SELECT slug FROM tb_site_categorias WHERE id = ?");
+														$sql->execute(array($value['categoria_id']));
+														$categoriaNome = $sql->fetch()['slug'];															
+													?>
 													
 													<article class="lista_portfolio_article">
 														<div class="lista_portfolio_content">
 															<div class="lista_portfolio_capa">
-																<a class="lista_portfolio_a" title="" href="#">
-																	<img src="http://dummyimage.com/1110x550/666666/666666.gif" alt="" title="" class="lista_portfolio_img img-fluid br10">
+																<a class="lista_portfolio_a" title="" href="<?php echo INCLUDE_PATH; ?>portfolio/<?php echo $categoriaNome; ?>/<?php echo $value['slug']; ?>">
+																	<img src="<?php echo INCLUDE_PATH_PAINEL?>assets/uploads/<?php echo $value['capa']; ?>" alt="" title="" class="lista_portfolio_img img-fluid br10">
 																</a>
 															</div>
 															<div class="lista_portfolio_conteudos">
 																<div class="lista_portfolio_txts">
 																	<div class="lista_portfolio_data">
-																		<p class="lista_portfolio_data_p hzmp"><i class="far fa-calendar-alt lista_portfolio_data_i"></i><span class="lista_portfolio_data_span">08 de Maio de 2019</span></p>
+																		<p class="lista_portfolio_data_p hzmp"><i class="far fa-calendar-alt lista_portfolio_data_i"></i><span class="lista_portfolio_data_span"><?php 	echo strftime('%d de %B de %Y', strtotime($value['data'])) . ""; ?></span></p>
 																	</div>
 																	<div class="lista_portfolio_titulo">
-																		<a class="lista_portfolio_a" title="" href="#">
-																			<header class="header_article"><h3 class="lista_portfolio_h3 transitions5 hzmp">Lorem ipsum dolor sitamet consectetur adipisicing elit mollitia non quibusdam eaque velcum 01</h3></header>
+																		<a class="lista_portfolio_a" title="" href="<?php echo INCLUDE_PATH; ?>portfolio/<?php echo $categoriaNome; ?>/<?php echo $value['slug']; ?>">
+																			<header class="header_article"><h3 class="lista_portfolio_h3 transitions5 hzmp"><?php echo $value['titulo']; ?></h3></header>
 																		</a>
 																	</div>
 																	<div class="lista_portfolio_texto">
 																		<p class="lista_portfolio_p">
-																			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore corporis tenetur, tempore suscipit. Cum, unde voluptatem obcaecati, culpa doloremque est iusto qui mollitia iste ducimus, quo. Dicta necessitatibus ut iure cum illum dolor, adipisci voluptatem placeat, esse fuga. Incidunt, laudantium temporibus ipsa autem expedita saepe molestiae dolorum
+																			<?php echo substr(strip_tags($value['conteudo']),0,150).'...';  ?>
 																		</p>
 																		<button class="lista_portfolio_btn transitions3" title="">
-																			<a href="<?php echo INCLUDE_PATH; ?>portfolio/esportes/nome-do-post">Ver mais</a>
+																			<a href="<?php echo INCLUDE_PATH; ?>portfolio/<?php echo $categoriaNome; ?>/<?php echo $value['slug']; ?>">Ver mais</a>
 																		</button>
 																	</div>
 																		
@@ -85,81 +150,32 @@
 															</div>
 														</div>
 													</article>
-	
-													<article class="lista_portfolio_article">
-															<div class="lista_portfolio_content">
-																<div class="lista_portfolio_capa">
-																	<a class="lista_portfolio_a" title="" href="#">
-																		<img src="http://dummyimage.com/1110x550/666666/666666.gif" alt="" title="" class="lista_portfolio_img img-fluid br10">
-																	</a>
-																</div>
-																<div class="lista_portfolio_conteudos">
-																	<div class="lista_portfolio_txts">
-																		<div class="lista_portfolio_data">
-																			<p class="lista_portfolio_data_p hzmp"><i class="far fa-calendar-alt lista_portfolio_data_i"></i><span class="lista_portfolio_data_span">08 de Maio de 2019</span></p>
-																		</div>
-																		<div class="lista_portfolio_titulo">
-																			<a class="lista_portfolio_a" title="" href="#">
-																				<header class="header_article"><h3 class="lista_portfolio_h3 transitions5 hzmp">Lorem ipsum dolor sitamet consectetur adipisicing elit mollitia non quibusdam eaque velcum 02</h3></header>
-																			</a>
-																		</div>
-																		<div class="lista_portfolio_texto">
-																			<p class="lista_portfolio_p">
-																				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore corporis tenetur, tempore suscipit. Cum, unde voluptatem obcaecati, culpa doloremque est iusto qui mollitia iste ducimus, quo. Dicta necessitatibus ut iure cum illum dolor, adipisci voluptatem placeat, esse fuga. Incidunt, laudantium temporibus ipsa autem expedita saepe molestiae dolorum
-																			</p>
-																			<button class="lista_portfolio_btn transitions3" title="">
-																					<a href="single-portfolio.php">Ver mais</a>
-																			</button>
-																		</div>
-																			
-																	</div>
-																</div>
-															</div>
-														</article>
 
-														<article class="lista_portfolio_article">
-																<div class="lista_portfolio_content">
-																	<div class="lista_portfolio_capa">
-																		<a class="lista_portfolio_a" title="" href="#">
-																			<img src="http://dummyimage.com/1110x550/666666/666666.gif" alt="" title="" class="lista_portfolio_img img-fluid br10">
-																		</a>
-																	</div>
-																	<div class="lista_portfolio_conteudos">
-																		<div class="lista_portfolio_txts">
-																			<div class="lista_portfolio_data">
-																				<p class="lista_portfolio_data_p hzmp"><i class="far fa-calendar-alt lista_portfolio_data_i"></i><span class="lista_portfolio_data_span">08 de Maio de 2019</span></p>
-																			</div>
-																			<div class="lista_portfolio_titulo">
-																				<a class="lista_portfolio_a" title="" href="#">
-																					<header class="header_article"><h3 class="lista_portfolio_h3 transitions5 hzmp">Lorem ipsum dolor sitamet consectetur adipisicing elit mollitia non quibusdam eaque velcum 03</h3></header>
-																				</a>
-																			</div>
-																			<div class="lista_portfolio_texto">
-																				<p class="lista_portfolio_p">
-																					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore corporis tenetur, tempore suscipit. Cum, unde voluptatem obcaecati, culpa doloremque est iusto qui mollitia iste ducimus, quo. Dicta necessitatibus ut iure cum illum dolor, adipisci voluptatem placeat, esse fuga. Incidunt, laudantium temporibus ipsa autem expedita saepe molestiae dolorum
-																				</p>
-																				<button class="lista_portfolio_btn transitions3" title="">
-																						<a href="single-portfolio.php">Ver mais</a>
-																				</button>
-																			</div>
-																				
-																		</div>
-																	</div>
-																</div>
-															</article>														
-	
+													<?php }?>
+
 												</div>
 											</div>
 											<!-- / lista portfolio -->
 	
 											<!-- paginação -->
 											<div class="paginacao">
+
+
+
 												<ul class="paginacao_ul hzmp">
 													
-													<li class="paginacao_li"><a class="paginacao_a transitions5" title="" href="#"><i class="fas fa-angle-double-left paginacao_i"></i></a></li>
-													<li class="paginacao_li"><a class="paginacao_a transitions5" title="" href="#">1</a></li>
-													<li class="paginacao_li"><a class="paginacao_a transitions5 paginacao_active" title="" href="#">2</a></li>
-													<li class="paginacao_li"><a class="paginacao_a transitions5" title="" href="#"><i class="fas fa-angle-double-right paginacao_i"></i></a></li>
+													<?php
+														for($i = 1; $i <= $totalPaginas; $i++){ 
+
+															$catStr = ($categoria['nome'] != '') ? '/'.$categoria['slug'] : '';
+
+															if($pagina == $i){ ?>
+																<li class="paginacao_li"><a class="paginacao_a transitions5 paginacao_active" title="" href="<?php echo INCLUDE_PATH; ?>portfolio<?php echo $catStr; ?>?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+															<?php }else{ ?>
+																<li class="paginacao_li"><a class="paginacao_a transitions5" title="" href="<?php echo INCLUDE_PATH; ?>portfolio<?php echo $catStr; ?>?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+															<?php } ?>
+																
+														<?php } ?>
 	
 												</ul>
 											</div>
@@ -182,22 +198,12 @@
 															// vou precisar para o link: echo $value['slug'];
 															?>
 
-															<li><a title="" href=""><i class="fas fa-angle-right acordeon_item_i"></i><span class="acorderon_item_span"><?php echo $value['nome']; ?></span></a></li>
+															<li><a title="" href="<?php echo INCLUDE_PATH?>portfolio/<?php echo $value['slug']; ?>"><i class="fas fa-angle-right acordeon_item_i"></i><span class="acorderon_item_span"><?php echo $value['nome']; ?></span></a></li>
 														
 														<?php 
 														}
 													?>													
 													
-												</ul>
-											</div>
-	
-	
-											<div class="acordeon">
-												<div class="titulo_sidebar"><span>Arquivos</span><i class="fas fa-caret-down icone_acordeon"></i></div>
-												<ul>
-													<li><a title="" href=""><i class="fas fa-angle-right acordeon_item_i"></i><span class="acorderon_item_span">2019 - Outubro</span></a></li>
-													<li><a title="" href=""><i class="fas fa-angle-right acordeon_item_i"></i><span class="acorderon_item_span">2019 - Novembro</span></a></li>
-													<li><a title="" href=""><i class="fas fa-angle-right acordeon_item_i"></i><span class="acorderon_item_span">2019 - Dezembro</span></a></li>
 												</ul>
 											</div>
 	
