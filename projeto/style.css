@@ -311,7 +311,7 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 
 /* Página portfolio ( Single ) */
 .lista_portfolio_texto img{border-radius: 10px; box-shadow: 0 0 11px rgba(33,33,33,.1); margin: 0px 0px 20px 0px;}
-.lista_portfolio_img{box-shadow: 0 0 11px rgba(33,33,33,.2); margin: 20px 0px 20px 0px;}
+.lista_portfolio_img{margin: 20px 0px 20px 0px;}
 .lista_artigo_p { margin-bottom: 15px; }
 .lista_artigo_p:last-child { margin-bottom: 0px; }
 

@@ -23,7 +23,7 @@
 	setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 	date_default_timezone_set('America/Sao_Paulo');
 
-	$urlAtual = str_replace("Novo/", "", $_SERVER["REQUEST_URI"]);
+	$urlAtual = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 			<!-- main site ( conteúdos do site ) -->
 			<main class="main_site">
@@ -123,7 +123,7 @@
 																<ul class="share_artigo_ul hzmp">
 																	
 																	<li class="share_artigo_li"><a class="share_artigo_a transitions5" title="" target="_blank" href="http://www.facebook.com/sharer.php?u=<?php echo $urlAtual; ?>"><i class="fab fa-facebook-f share_artigo_i"></i></a></li>
-																	<li class="share_artigo_li"><a class="share_artigo_a transitions5" title="" target="_blank" href=""><i class="fab fa-whatsapp share_artigo_i"></i></a></li>
+																	<li class="share_artigo_li"><a class="share_artigo_a transitions5" title="" target="_blank" href="https://api.whatsapp.com/send?text=<?php echo $post['titulo'];?> <?php echo $urlAtual;?>"><i class="fab fa-whatsapp share_artigo_i"></i></a></li>
 		
 																</ul>
 															</div>
@@ -134,9 +134,8 @@
 											<!-- / compartilhar -->
 
 											<!-- plugin de comentários -->
-											<div class="fb-comments" data-href="http://localhost/portfolio/CMS-Portfolio-Design/projeto" data-width="" data-numposts="5"></div>
-
-
+											
+											<div class="fb-comments" data-href="<?php echo $urlAtual; ?>" data-width="100%" data-numposts="5"></div>
 											
 											<!-- / plugin de comentários -->
 
