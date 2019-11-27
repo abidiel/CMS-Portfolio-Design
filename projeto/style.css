@@ -393,7 +393,7 @@ img, video, embed, iframe, iframe[style] { max-width: 100%; height: auto; }
 .form_contato { width: 100%; margin: 0px auto; max-width: 442px; }
 .form_contato_li { margin-top: 15px; margin-bottom: 15px; }
 
-form input[type=submit]{
+form button[type=submit]{
 	width: 100px;
 	height: 40px;
 	cursor: pointer;
