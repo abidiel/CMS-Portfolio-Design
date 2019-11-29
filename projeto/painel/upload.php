@@ -1,15 +1,20 @@
 <?php
+if (isset($_GET['loggout'])) {
+  Painel::loggout();
+}
+?>
+<?php
 $accepted_origins = array("http://localhost", "http://107.161.82.130", "http://codexworld.com");
 
-$imageFolder = "images/";
-
+$imageFolder = "pages/upload/";
+$host = "http://localhost/portfolio/CMS-Portfolio-Design/projeto/painel/";
 reset($_FILES);
 $temp = current($_FILES);
-if(is_uploaded_file($temp['tmp_name'])){
-  if(isset($_SERVER['HTTP_ORIGIN'])){
-    if(in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)){
+if (is_uploaded_file($temp['tmp_name'])) {
+  if (isset($_SERVER['HTTP_ORIGIN'])) {
+    if (in_array($_SERVER['HTTP_ORIGIN'], $accepted_origins)) {
       header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
-    }else{
+    } else {
       header("HTTP/1.1 403 Origin Denied");
       return;
     }
@@ -25,13 +30,11 @@ if(is_uploaded_file($temp['tmp_name'])){
     return;
   }
 
-
-
   $filetowrite = $imageFolder . $temp['name'];
+  $repo = $host . $filetowrite;
   move_uploaded_file($temp['tmp_name'], $filetowrite);
-
+  $repo = $host . $filetowrite;
   echo json_encode(array('location' => $filetowrite));
-}else {
+} else {
   header("HTTP/1.1 500 Server Error");
 }
-?>
